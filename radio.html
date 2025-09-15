@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Cristiana App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <!-- Contenedor principal de la aplicación -->
+    <div class="bg-white p-8 rounded-xl shadow-2xl w-full max-w-sm text-center transform transition-transform hover:scale-105">
+        <h1 class="text-3xl font-bold text-gray-800 mb-2">Voces Stereo 89.4 FM</h1>
+        <p class="text-md text-gray-600 mb-6">Tu voz, nuestra voz</p>
+
+        <!-- Reproductor de audio -->
+        <audio id="audio-player" class="w-full mb-4" preload="none">
+            <!-- URL del stream de la emisora -->
+            <source src="https://stream.voces894fm.org/stream" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+
+        <!-- Botones de control -->
+        <div class="flex items-center justify-center space-x-4">
+            <button id="play-button" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-colors">
+                Reproducir
+            </button>
+            <button id="pause-button" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-colors">
+                Pausar
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const audioPlayer = document.getElementById('audio-player');
+        const playButton = document.getElementById('play-button');
+        const pauseButton = document.getElementById('pause-button');
+
+        // Escucha el clic en el botón de Reproducir
+        playButton.addEventListener('click', () => {
+            audioPlayer.play();
+            console.log('Reproduciendo audio...');
+        });
+
+        // Escucha el clic en el botón de Pausar
+        pauseButton.addEventListener('click', () => {
+            audioPlayer.pause();
+            console.log('Audio pausado.');
+        });
+    </script>
+</body>
+</html>

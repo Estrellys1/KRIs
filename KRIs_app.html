@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kris - Tu Guía de Fe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .container {
+            max-width: 90%;
+            margin: auto;
+        }
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .nav-btn.active {
+            background-color: #1e40af;
+            color: white;
+        }
+        .merriweather {
+            font-family: 'Merriweather', serif;
+        }
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            width: 1.5rem;
+            height: 1.5rem;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        /* Estilo para los mensajes */
+        .message-box {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 1rem;
+            border-radius: 8px;
+            color: white;
+            z-index: 1000;
+            display: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        .message-box.show {
+            display: block;
+            animation: slideIn 0.3s ease-out;
+        }
+        .message-box.error { background-color: #dc2626; }
+        .message-box.success { background-color: #16a34a; }
+        @keyframes slideIn {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-6 flex items-center justify-center min-h-screen">
+
+    <!-- Contenido principal de la aplicación -->
+    <div id="main-content" class="container mx-auto p-4 md:p-8 space-y-8">
+        <header class="text-center mb-10">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight merriweather">Kris - Tu Guía de Fe</h1>
+            <p class="text-lg text-gray-600 mt-2">Unimos la Palabra, la oración y la música en un solo lugar.</p>
+        </header>
+
+        <!-- Navegación por secciones -->
+        <nav class="card p-4 flex flex-wrap justify-center md:space-x-4 space-x-2 space-y-2 md:space-y-0 text-center">
+            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-blue-600 text-white hover:bg-blue-700" data-section="reflexiones">Reflexiones</button>
+            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="parejas" data-premium="true">Parejas (Premium)</button>
+            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="catecismo" data-premium="true">Catecismo (Premium)</button>
+            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="musica" data-premium="true">Música (Premium)</button>
+            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="rosario">Rosario y Misericordia</button>
+            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="oraciones">Oraciones del día</button>
+            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="historias" data-premium="true">Historias para niños (Premium)</button>
+            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="plan" data-premium="true">Plan de lectura (Premium)</button>
+            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="radio">Radio</button>
+            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="comunidad" data-premium="true">Comunidad (Premium)</button>
+        </nav>
+
+        <!-- Contenido de las secciones -->
+        <div id="app-content">
+
+            <!-- Sección de Reflexiones -->
+            <div id="reflexiones-section" class="space-y-8">
+                <section class="card p-6 md:p-8 space-y-4 fade-in">
+                    <h2 class="text-2xl font-bold text-gray-700">Análisis Bíblico Profundo</h2>
+                    <p class="text-gray-600">
+                        Ingresa un pasaje bíblico para recibir una reflexión personal y un análisis detallado.
+                    </p>
+                    <div class="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
+                        <div class="flex-1">
+                            <label for="book-input" class="block text-sm font-medium text-gray-700">Libro:</label>
+                            <input type="text" id="book-input" placeholder="Ej: Juan" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-300 p-2">
+                        </div>
+                        <div class="flex-1">
+                            <label for="chapter-input" class="block text-sm font-medium text-gray-700">Capítulo:</label>
+                            <input type="number" id="chapter-input" value="1" min="1" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-300 p-2">
+                        </div>
+                        <div class="flex-1">
+                            <label for="verse-input" class="block text-sm font-medium text-gray-700">Versículo(s):</label>
+                            <input type="text" id="verse-input" placeholder="Ej: 1-5 o 3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-300 p-2">
+                        </div>
+                    </div>
+                    
+                    <button id="generate-btn" class="w-full bg-green-600 text-white font-bold py-3 px-6 rounded-md shadow-lg hover:bg-green-700 transition duration-300 flex items-center justify-center space-x-2">
+                        <span>Generar Reflexión y Análisis</span>
+                        <div id="loading-spinner-reflexiones" class="spinner hidden"></div>
+                    </button>
+                </section>
+
+                <section id="reflection-container" class="space-y-6 mt-8">
+                    <!-- Los resultados del análisis profundo se cargarán aquí -->
+                </section>
+            </div>
+
+            <!-- Sección de Radio -->
+            <div id="radio-section" class="hidden space-y-8">
+                <section class="card p-6 md:p-8 text-center fade-in">
+                    <h2 class="text-2xl font-bold text-gray-700 mb-4">Voces Stereo 89.4 FM</h2>
+                    <p class="text-gray-600 mb-4">Escucha en vivo la mejor programación para acompañar tu fe.</p>
+                    <audio id="audio-player" class="w-full max-w-lg mx-auto" controls>
+                        <source src="https://stream.voces894fm.org/stream" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                    <div class="text-sm mt-2 text-center text-gray-500">
+                        Transmisión en vivo: 89.4 FM
+                    </div>
+                </section>
+            </div>
+            
+            <!-- Sección de Rosario y Misericordia (Gratuita con Audio) -->
+            <div id="rosario-section" class="hidden space-y-8">
+                <section class="card p-6 md:p-8 space-y-4 fade-in">
+                    <h2 class="text-2xl font-bold text-gray-700 mb-4">Rosario y la Divina Misericordia</h2>
+                    <p class="text-gray-600">Guía de oración en texto y audio. Usa el botón para comenzar a escuchar.</p>
+                    <div id="rosario-text" class="text-gray-700 space-y-4 text-sm bg-gray-50 p-4 rounded-lg">
+                        <p class="text-gray-500">Presiona 'Reproducir Audio' para cargar la oración.</p>
+                    </div>
+                    <button id="play-rosario-btn" class="w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-md shadow-lg hover:bg-blue-700 transition duration-300 flex items-center justify-center space-x-2">
+                        <span>Reproducir Audio</span>
+                        <div id="loading-spinner-rosario" class="spinner hidden"></div>
+                    </button>
+                    <audio id="rosario-audio" controls class="w-full mt-4 hidden"></audio>
+                </section>
+            </div>
+
+            <!-- Sección de Oración del Día (Gratuita con Audio) -->
+            <div id="oraciones-section" class="hidden space-y-8">
+                <section class="card p-6 md:p-8 space-y-4 fade-in">
+                    <h2 class="text-2xl font-bold text-gray-700 mb-4">Oración del Día</h2>
+                    <p class="text-gray-600">Una nueva oración inspiradora cada día. Presiona 'Reproducir Audio' para escucharla.</p>
+                    <div id="oracion-text" class="text-gray-700 space-y-4 text-sm bg-gray-50 p-4 rounded-lg">
+                        <p class="text-gray-500">Presiona 'Reproducir Audio' para cargar la oración.</p>
+                    </div>
+                    <button id="play-oracion-btn" class="w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-md shadow-lg hover:bg-blue-700 transition duration-300 flex items-center justify-center space-x-2">
+                        <span>Reproducir Audio</span>
+                        <div id="loading-spinner-oracion" class="spinner hidden"></div>
+                    </button>
+                    <audio id="oracion-audio" controls class="w-full mt-4 hidden"></audio>
+                </section>
+            </div>
+
+            <!-- Secciones premium -->
+            <div id="parejas-section" class="hidden space-y-8">
+                <section class="card p-6 md:p-8 text-center fade-in">
+                    <h2 class="text-2xl font-bold text-gray-700 mb-4">Consejos para parejas (Premium)</h2>
+                    <p class="text-gray-600">Accede a contenido exclusivo sobre fe en pareja con una membresía premium.</p>
+                </section>
+            </div>
+            <div id="catecismo-section" class="hidden space-y-8">
+                <section class="card p-6 md:p-8 text-center fade-in">
+                    <h2 class="text-2xl font-bold text-gray-700 mb-4">Catecismo (Premium)</h2>
+                    <p class="text-gray-600">Desbloquea el acceso al catecismo con tu membresía premium.</p>
+                </section>
+            </div>
+            <div id="musica-section" class="hidden space-y-8">
+                <section class="card p-6 md:p-8 text-center fade-in">
+                    <h2 class="text-2xl font-bold text-gray-700 mb-4">Música Espiritual (Premium)</h2>
+                    <p class="text-gray-600">Escucha música inspiradora con tu membresía premium.</p>
+                </section>
+            </div>
+            <div id="historias-section" class="hidden space-y-8">
+                <section class="card p-6 md:p-8 text-center fade-in">
+                    <h2 class="text-2xl font-bold text-gray-700 mb-4">Historias para niños (Premium)</h2>
+                    <p class="text-600">Cuentos bíblicos narrados para niños, solo en la versión premium.</p>
+                </section>
+            </div>
+            <div id="plan-section" class="hidden space-y-8">
+                <section class="card p-6 md:p-8 text-center fade-in">
+                    <h2 class="text-2xl font-bold text-gray-700 mb-4">Plan de lectura (Premium)</h2>
+                    <p class="text-gray-600">Planes de lectura guiados disponibles para miembros premium.</p>
+                </section>
+            </div>
+            <div id="comunidad-section" class="hidden space-y-8">
+                <section class="card p-6 md:p-8 text-center fade-in">
+                    <h2 class="text-2xl font-bold text-gray-700 mb-4">Reflexiones de la Comunidad (Premium)</h2>
+                    <p class="text-gray-600">Únete a la comunidad de fe con tu membresía premium.</p>
+                </section>
+            </div>
+        </div>
+
+        <!-- Sección de Perfil, Login y Premium -->
+        <section id="profile-section" class="card p-6 md:p-8 mt-8 space-y-4 text-center">
+            <div id="login-container">
+                <h2 class="text-2xl font-bold text-gray-700">Inicia sesión o Regístrate</h2>
+                <p class="text-gray-600 text-sm mt-2">Inicia sesión para acceder a las funciones premium.</p>
+                <div class="space-y-4 mt-4">
+                    <input type="email" id="email-input" class="w-full p-3 border rounded-md" placeholder="Correo electrónico">
+                    <input type="password" id="password-input" class="w-full p-3 border rounded-md" placeholder="Contraseña">
+                    <button id="login-btn" class="w-full bg-blue-600 text-white p-3 rounded-md font-bold hover:bg-blue-700 transition">Iniciar Sesión</button>
+                    <button id="register-btn" class="w-full bg-green-600 text-white p-3 rounded-md font-bold hover:bg-green-700 transition">Regístrate</button>
+                </div>
+                <p id="auth-message" class="text-red-500 text-sm mt-4 text-center"></p>
+            </div>
+
+            <div id="profile-info" class="hidden">
+                <h2 class="text-2xl font-bold text-gray-700">Tu Perfil</h2>
+                <p id="user-status" class="text-gray-500 text-sm mt-2">Cargando...</p>
+                <p id="user-id-display" class="text-gray-400 text-xs break-all hidden"></p>
+                <div id="premium-info" class="space-y-2 mt-4">
+                    <p id="subscription-status" class="font-bold text-lg text-blue-600">Versión Gratuita</p>
+                    <p class="text-gray-600">Obtén acceso ilimitado a todas las funcionalidades premium, incluyendo:</p>
+                    <ul class="list-disc list-inside text-left mx-auto max-w-sm space-y-1 text-gray-700">
+                        <li>Parejas</li>
+                        <li>Catecismo</li>
+                        <li>Música</li>
+                        <li>Historias para niños</li>
+                        <li>Plan de lectura</li>
+                        <li>Comunidad</li>
+                    </ul>
+                </div>
+                <button id="premium-btn" class="w-full bg-yellow-500 text-white font-bold py-3 px-6 rounded-md shadow-lg hover:bg-yellow-600 transition duration-300 mt-4">
+                    Obtener Premium
+                </button>
+                <button id="logout-btn" class="w-full bg-red-600 text-white font-bold py-3 px-6 rounded-md shadow-lg hover:bg-red-700 transition duration-300 mt-4">
+                    Cerrar Sesión
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contenedor para mensajes (reemplazo de alert) -->
+    <div id="message-container" class="message-box transition-all"></div>
+
+    <!-- Firebase y Lógica de la Aplicación -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithCustomToken, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, getDoc, setDoc, updateDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        
+        // Variables de entorno de Canvas. NO MODIFICAR.
+        const firebaseConfig =  {
+  apiKey: "AIzaSyBjPcHsXdUUAtvZGYzcRfHL6Wg0c5G9Ojw",
+  authDomain: "kris-d9a63.firebaseapp.com",
+  projectId: "kris-d9a63",
+  storageBucket: "kris-d9a63.firebasestorage.app",
+  messagingSenderId: "299754246982",
+  appId: "1:299754246982:web:e53e04fffe92d2b33e4b47"
+};
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+
+        // Inicializar Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        let userId = null;
+        let userData = {
+            isPremium: false,
+            subscriptionEndDate: null
+        };
+        
+        // Elementos del DOM
+        const loginContainer = document.getElementById('login-container');
+        const profileInfo = document.getElementById('profile-info');
+        const emailInput = document.getElementById('email-input');
+        const passwordInput = document.getElementById('password-input');
+        const loginBtn = document.getElementById('login-btn');
+        const registerBtn = document.getElementById('register-btn');
+        const logoutBtn = document.getElementById('logout-btn');
+        const authMessage = document.getElementById('auth-message');
+        const userStatus = document.getElementById('user-status');
+        const userIdDisplay = document.getElementById('user-id-display');
+        const premiumBtn = document.getElementById('premium-btn');
+        const subscriptionStatus = document.getElementById('subscription-status');
+        const generateBtn = document.getElementById('generate-btn');
+        const loadingSpinnerReflexiones = document.getElementById('loading-spinner-reflexiones');
+        const reflectionContainer = document.getElementById('reflection-container');
+        const navButtons = document.querySelectorAll('.nav-btn');
+        const messageContainer = document.getElementById('message-container');
+
+        // Elementos para Rosario y Oración del Día
+        const playRosarioBtn = document.getElementById('play-rosario-btn');
+        const loadingSpinnerRosario = document.getElementById('loading-spinner-rosario');
+        const rosarioTextDiv = document.getElementById('rosario-text');
+        const rosarioAudioPlayer = document.getElementById('rosario-audio');
+        
+        const playOracionBtn = document.getElementById('play-oracion-btn');
+        const loadingSpinnerOracion = document.getElementById('loading-spinner-oracion');
+        const oracionTextDiv = document.getElementById('oracion-text');
+        const oracionAudioPlayer = document.getElementById('oracion-audio');
+        
+        // Función para mostrar mensajes de forma segura
+        const showMessage = (message, type) => {
+            messageContainer.textContent = message;
+            messageContainer.className = `message-box show ${type}`;
+            setTimeout(() => {
+                messageContainer.classList.remove('show');
+            }, 3000);
+        };
+
+        // Lógica de autenticación
+        const updateUI = async (user) => {
+            if (user) {
+                userId = user.uid;
+                loginContainer.classList.add('hidden');
+                profileInfo.classList.remove('hidden');
+                userStatus.textContent = `Bienvenido, ${user.email || 'Usuario Anónimo'}`;
+                userIdDisplay.textContent = `ID de usuario: ${userId}`;
+                userIdDisplay.classList.remove('hidden');
+
+                const userDocRef = doc(db, "artifacts", appId, "users", userId, "userData", "profile");
+                const docSnap = await getDoc(userDocRef);
+                if (docSnap.exists()) {
+                    userData = docSnap.data();
+                    if (userData.isPremium && userData.subscriptionEndDate && new Date() < userData.subscriptionEndDate.toDate()) {
+                        subscriptionStatus.textContent = "Suscripción Premium ✅";
+                    } else {
+                        userData.isPremium = false;
+                        subscriptionStatus.textContent = "Versión Gratuita";
+                    }
+                } else {
+                    await setDoc(userDocRef, userData);
+                    subscriptionStatus.textContent = "Versión Gratuita";
+                }
+            } else {
+                userId = null;
+                loginContainer.classList.remove('hidden');
+                profileInfo.classList.add('hidden');
+                userData.isPremium = false;
+                subscriptionStatus.textContent = "Versión Gratuita";
+            }
+        };
+
+        // Manejar el token de autenticación inicial
+        onAuthStateChanged(auth, async (user) => {
+            if (!user && initialAuthToken) {
+                try {
+                    await signInWithCustomToken(auth, initialAuthToken);
+                } catch (error) {
+                    console.error("Error signing in with custom token:", error);
+                    await signInAnonymously(auth);
+                }
+            } else if (!user) {
+                await signInAnonymously(auth);
+            } else {
+                updateUI(user);
+            }
+        });
+
+        loginBtn.addEventListener('click', async () => {
+            authMessage.textContent = '';
+            try {
+                await signInWithEmailAndPassword(auth, emailInput.value, passwordInput.value);
+            } catch (error) {
+                authMessage.textContent = 'Error al iniciar sesión: ' + error.message;
+            }
+        });
+
+        registerBtn.addEventListener('click', async () => {
+            authMessage.textContent = '';
+            try {
+                const userCredential = await createUserWithEmailAndPassword(auth, emailInput.value, passwordInput.value);
+                const userDocRef = doc(db, "artifacts", appId, "users", userCredential.user.uid, "userData", "profile");
+                await setDoc(userDocRef, userData);
+                showMessage('Registro exitoso. ¡Bienvenido!', 'success');
+            } catch (error) {
+                authMessage.textContent = 'Error al registrarse: ' + error.message;
+            }
+        });
+
+        logoutBtn.addEventListener('click', async () => {
+            await signOut(auth);
+            showMessage('Sesión cerrada.', 'success');
+        });
+
+        premiumBtn.addEventListener('click', async () => {
+            if (userId && auth.currentUser.isAnonymous === false) {
+                const userDocRef = doc(db, "artifacts", appId, "users", userId, "userData", "profile");
+                const newEndDate = new Date();
+                newEndDate.setMonth(newEndDate.getMonth() + 1);
+                userData.isPremium = true;
+                userData.subscriptionEndDate = newEndDate;
+                await updateDoc(userDocRef, { isPremium: true, subscriptionEndDate: newEndDate });
+                updateUI(auth.currentUser);
+                showMessage('¡Pago exitoso! Ahora eres un usuario premium por un mes.', 'success');
+            } else {
+                showMessage('Por favor, inicia sesión para adquirir la membresía premium.', 'error');
+            }
+        });
+
+        // Lógica de reflexión (ilimitada y con análisis profundo simulado)
+        generateBtn.addEventListener('click', async () => {
+            loadingSpinnerReflexiones.classList.remove('hidden');
+            generateBtn.disabled = true;
+            reflectionContainer.innerHTML = `<p class="text-gray-500 text-center">Generando un análisis profundo...</p>`;
+            
+            setTimeout(() => {
+                loadingSpinnerReflexiones.classList.add('hidden');
+                generateBtn.disabled = false;
+                
+                reflectionContainer.innerHTML = `
+                    <div class="card p-6 fade-in">
+                        <h3 class="text-xl font-bold text-gray-800">Análisis y Reflexión</h3>
+                        <p class="mt-2 text-gray-700">El pasaje seleccionado, <strong>Juan 3:16</strong>, es uno de los versículos más conocidos de la Biblia. En él se resume la esencia del Evangelio: el amor incondicional de Dios por la humanidad.</p>
+                    </div>
+                    <div class="card p-6 fade-in">
+                        <h3 class="text-xl font-bold text-gray-800">Análisis Explicativo</h3>
+                        <p class="mt-2 text-gray-700">
+                            La palabra "mundo" ($$\kappa o \sigma \mu o \varsigma$$) en griego no se refiere solo a la Tierra, sino a la humanidad, a la creación caída y pecadora. El verbo "amó" está en aoristo, indicando un acto de amor definitivo y completo en la crucifixión. El regalo de su "hijo unigénito" ($$\mu o \nu o \gamma \epsilon \nu \eta \varsigma$$) enfatiza la singularidad y divinidad de Jesús. La promesa es que todo aquel que "cree" en Él no se perderá, sino que tendrá vida eterna.
+                        </p>
+                    </div>
+                    <div class="card p-6 fade-in">
+                        <h3 class="text-xl font-bold text-gray-800">Contexto Histórico y Cultural</h3>
+                        <p class="mt-2 text-gray-700">
+                            Este versículo es parte de la conversación de Jesús con Nicodemo, un fariseo y líder judío. Nicodemo buscaba respuestas sobre el reino de Dios y la salvación. En un contexto donde la salvación era vista a menudo como un privilegio para el pueblo de Israel, este versículo rompe con esa idea, ofreciendo la salvación a todas las naciones a través de la fe en Jesús.
+                        </p>
+                    </div>
+                    <div class="card p-6 fade-in">
+                        <h3 class="text-xl font-bold text-gray-800">Aplicación a la Vida Diaria</h3>
+                        <p class="mt-2 text-gray-700">
+                            Este pasaje nos recuerda que la salvación es un regalo inmerecido de Dios, disponible para todos, sin importar nuestro pasado. Nos llama a tener una fe activa, a confiar en el sacrificio de Jesús y a vivir nuestras vidas en respuesta a ese amor. Es un fundamento de esperanza para el creyente.
+                        </p>
+                    </div>
+                `;
+            }, 2000);
+        });
+        
+        // --- Lógica para Audio de Rosario y Oración ---
+        // Helper function to convert base64 to ArrayBuffer
+        const base64ToArrayBuffer = (base64) => {
+            const binaryString = atob(base64);
+            const len = binaryString.length;
+            const bytes = new Uint8Array(len);
+            for (let i = 0; i < len; i++) {
+                bytes[i] = binaryString.charCodeAt(i);
+            }
+            return bytes.buffer;
+        };
+
+        // Helper function to convert PCM audio to WAV format
+        const pcmToWav = (pcmData, sampleRate) => {
+            const buffer = new ArrayBuffer(44 + pcmData.byteLength);
+            const view = new DataView(buffer);
+
+            // WAV header
+            writeString(view, 0, 'RIFF');
+            view.setUint32(4, 36 + pcmData.byteLength, true);
+            writeString(view, 8, 'WAVE');
+            writeString(view, 12, 'fmt ');
+            view.setUint32(16, 16, true);
+            view.setUint16(20, 1, true);
+            view.setUint16(22, 1, true);
+            view.setUint32(24, sampleRate, true);
+            view.setUint32(28, sampleRate * 2, true);
+            view.setUint16(32, 2, true);
+            view.setUint16(34, 16, true);
+            writeString(view, 36, 'data');
+            view.setUint32(40, pcmData.byteLength, true);
+
+            // Write PCM data
+            for (let i = 0; i < pcmData.length; i++) {
+                view.setInt16(44 + i * 2, pcmData[i], true);
+            }
+            return new Blob([view], { type: 'audio/wav' });
+        };
+
+        const writeString = (view, offset, string) => {
+            for (let i = 0; i < string.length; i++) {
+                view.setUint8(offset + i, string.charCodeAt(i));
+            }
+        };
+
+        // Main function to generate and play audio
+        const generateAndPlayAudio = async (text, audioPlayer, voiceName = 'Vindemiatrix') => {
+            const apiKey = "";
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`;
+            const payload = {
+                contents: [{
+                    parts: [{ text: `Lee con un tono suave y relajante: ${text}` }]
+                }],
+                generationConfig: {
+                    responseModalities: ["AUDIO"],
+                    speechConfig: {
+                        voiceConfig: {
+                            prebuiltVoiceConfig: { voiceName: voiceName }
+                        }
+                    }
+                },
+                model: "gemini-2.5-flash-preview-tts"
+            };
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+                const part = result?.candidates?.[0]?.content?.parts?.[0];
+                const audioData = part?.inlineData?.data;
+                const mimeType = part?.inlineData?.mimeType;
+
+                if (audioData && mimeType && mimeType.startsWith("audio/")) {
+                    const sampleRate = parseInt(mimeType.match(/rate=(\d+)/)[1], 10);
+                    const pcmData = base64ToArrayBuffer(audioData);
+                    const pcm16 = new Int16Array(pcmData);
+                    const wavBlob = pcmToWav(pcm16, sampleRate);
+                    const audioUrl = URL.createObjectURL(wavBlob);
+                    audioPlayer.src = audioUrl;
+                    audioPlayer.play();
+                } else {
+                    console.error('Error: Audio data not found in API response.');
+                }
+            } catch (error) {
+                console.error('API call failed:', error);
+            }
+        };
+
+        playRosarioBtn.addEventListener('click', async () => {
+            loadingSpinnerRosario.classList.remove('hidden');
+            playRosarioBtn.disabled = true;
+            rosarioAudioPlayer.classList.add('hidden');
+            
+            const rosarioText = `
+                <p>En el nombre del Padre, del Hijo y del Espíritu Santo. Amén.</p>
+                <p class="mt-2">Credo, Padre Nuestro, tres Avemarías y Gloria.</p>
+                <p class="mt-4 font-bold">Primer Misterio Gozoso: La Anunciación del Ángel a la Virgen.</p>
+                <p>Padre Nuestro... diez Avemarías... Gloria...</p>
+                <p class="mt-4 font-bold">Oración: Oh, Jesús mío, perdona nuestros pecados...</p>
+            `;
+            
+            rosarioTextDiv.innerHTML = rosarioText;
+            rosarioAudioPlayer.classList.remove('hidden');
+
+            await generateAndPlayAudio(rosarioTextDiv.innerText, rosarioAudioPlayer);
+
+            loadingSpinnerRosario.classList.add('hidden');
+            playRosarioBtn.disabled = false;
+        });
+
+        playOracionBtn.addEventListener('click', async () => {
+            loadingSpinnerOracion.classList.remove('hidden');
+            playOracionBtn.disabled = true;
+            oracionAudioPlayer.classList.add('hidden');
+
+            const oracionText = `
+                <p>Oh, Dios de infinita misericordia, te damos gracias por el regalo de este nuevo día. Te pedimos que ilumines nuestros caminos y fortalezcas nuestra fe. Que tu amor nos guíe en cada decisión y que tu presencia nos acompañe en todo momento. Te lo pedimos por Jesucristo nuestro Señor. Amén.</p>
+            `;
+
+            oracionTextDiv.innerHTML = oracionText;
+            oracionAudioPlayer.classList.remove('hidden');
+            
+            await generateAndPlayAudio(oracionTextDiv.innerText, oracionAudioPlayer);
+
+            loadingSpinnerOracion.classList.add('hidden');
+            playOracionBtn.disabled = false;
+        });
+
+        // Lógica de navegación principal
+        // Muestra la sección correspondiente y oculta las demás.
+        // Ahora también verifica si la sección es premium.
+        const sections = document.querySelectorAll('#app-content > div');
+        const showSection = (sectionId) => {
+            sections.forEach(section => {
+                section.classList.add('hidden');
+                section.classList.remove('fade-in');
+            });
+            const activeSection = document.getElementById(sectionId);
+            if (activeSection) {
+                activeSection.classList.remove('hidden');
+                activeSection.classList.add('fade-in');
+            }
+        };
+
+        navButtons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                const sectionId = event.target.dataset.section + '-section';
+                const isPremium = event.target.dataset.premium === 'true';
+
+                // Remueve la clase 'active' de todos los botones
+                navButtons.forEach(btn => btn.classList.remove('bg-blue-600', 'text-white'));
+                navButtons.forEach(btn => btn.classList.add('bg-gray-200', 'text-gray-700'));
+
+                // Agrega la clase 'active' al botón clicado
+                event.target.classList.remove('bg-gray-200', 'text-gray-700');
+                event.target.classList.add('bg-blue-600', 'text-white');
+
+                if (isPremium && !userData.isPremium) {
+                    showMessage('Esta es una función premium. Por favor, adquiere tu membresía para acceder.', 'error');
+                } else {
+                    showSection(sectionId);
+                }
+            });
+        });
+
+        // Mostrar la sección inicial al cargar
+        document.addEventListener('DOMContentLoaded', () => {
+            showSection('reflexiones-section');
+        });
+    </script>
+</body>
+</html>
