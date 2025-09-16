@@ -84,15 +84,15 @@
         <!-- Navegación por secciones -->
         <nav class="card p-4 flex flex-wrap justify-center md:space-x-4 space-x-2 space-y-2 md:space-y-0 text-center">
             <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-blue-600 text-white hover:bg-blue-700" data-section="reflexiones">Reflexiones</button>
-            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="parejas" data-premium="true">Parejas (Premium)</button>
-            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="catecismo" data-premium="true">Catecismo (Premium)</button>
-            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="musica" data-premium="true">Música (Premium)</button>
+            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="parejas">Parejas (Premium)</button>
+            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="catecismo">Catecismo (Premium)</button>
+            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="musica">Música (Premium)</button>
             <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="rosario">Rosario y Misericordia</button>
             <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="oraciones">Oraciones del día</button>
-            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="historias" data-premium="true">Historias para niños (Premium)</button>
-            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="plan" data-premium="true">Plan de lectura (Premium)</button>
+            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="historias">Historias para niños (Premium)</button>
+            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="plan">Plan de lectura (Premium)</button>
             <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="radio">Radio</button>
-            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="comunidad" data-premium="true">Comunidad (Premium)</button>
+            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="comunidad">Comunidad (Premium)</button>
         </nav>
 
         <!-- Contenido de las secciones -->
@@ -267,14 +267,7 @@
         import { getFirestore, doc, getDoc, setDoc, updateDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
         
         // Variables de entorno de Canvas. NO MODIFICAR.
-        const firebaseConfig =  {
-  apiKey: "AIzaSyBjPcHsXdUUAtvZGYzcRfHL6Wg0c5G9Ojw",
-  authDomain: "kris-d9a63.firebaseapp.com",
-  projectId: "kris-d9a63",
-  storageBucket: "kris-d9a63.firebasestorage.app",
-  messagingSenderId: "299754246982",
-  appId: "1:299754246982:web:e53e04fffe92d2b33e4b47"
-};
+        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
         const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
         const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
 
@@ -574,57 +567,54 @@
             oracionAudioPlayer.classList.add('hidden');
 
             const oracionText = `
-                <p>Oh, Dios de infinita misericordia, te damos gracias por el regalo de este nuevo día. Te pedimos que ilumines nuestros caminos y fortalezcas nuestra fe. Que tu amor nos guíe en cada decisión y que tu presencia nos acompañe en todo momento. Te lo pedimos por Jesucristo nuestro Señor. Amén.</p>
+                <p>Señor, en este nuevo día, te damos gracias por el don de la vida. Guíanos con tu sabiduría para que cada paso que demos sea para honrarte. Fortalece nuestra fe para que podamos ser testigos de tu amor en el mundo. Amén.</p>
             `;
-
+            
             oracionTextDiv.innerHTML = oracionText;
             oracionAudioPlayer.classList.remove('hidden');
-            
-            await generateAndPlayAudio(oracionTextDiv.innerText, oracionAudioPlayer);
 
+            await generateAndPlayAudio(oracionTextDiv.innerText, oracionAudioPlayer);
+            
             loadingSpinnerOracion.classList.add('hidden');
             playOracionBtn.disabled = false;
         });
-
-        // Lógica de navegación principal
-        // Muestra la sección correspondiente y oculta las demás.
-        // Ahora también verifica si la sección es premium.
-        const sections = document.querySelectorAll('#app-content > div');
-        const showSection = (sectionId) => {
-            sections.forEach(section => {
-                section.classList.add('hidden');
-                section.classList.remove('fade-in');
-            });
-            const activeSection = document.getElementById(sectionId);
-            if (activeSection) {
-                activeSection.classList.remove('hidden');
-                activeSection.classList.add('fade-in');
-            }
-        };
-
-        navButtons.forEach(button => {
-            button.addEventListener('click', (event) => {
-                const sectionId = event.target.dataset.section + '-section';
-                const isPremium = event.target.dataset.premium === 'true';
-
-                // Remueve la clase 'active' de todos los botones
-                navButtons.forEach(btn => btn.classList.remove('bg-blue-600', 'text-white'));
-                navButtons.forEach(btn => btn.classList.add('bg-gray-200', 'text-gray-700'));
-
-                // Agrega la clase 'active' al botón clicado
-                event.target.classList.remove('bg-gray-200', 'text-gray-700');
-                event.target.classList.add('bg-blue-600', 'text-white');
-
-                if (isPremium && !userData.isPremium) {
-                    showMessage('Esta es una función premium. Por favor, adquiere tu membresía para acceder.', 'error');
-                } else {
-                    showSection(sectionId);
-                }
-            });
-        });
-
-        // Mostrar la sección inicial al cargar
+        
+        // Lógica de navegación
         document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('#app-content > div');
+            const showSection = (sectionId) => {
+                sections.forEach(sec => {
+                    sec.classList.add('hidden');
+                    sec.classList.remove('fade-in');
+                });
+                const targetSection = document.getElementById(sectionId);
+                if (targetSection) {
+                    targetSection.classList.remove('hidden');
+                    targetSection.classList.add('fade-in');
+                }
+                navButtons.forEach(btn => {
+                    btn.classList.remove('active', 'bg-blue-600', 'text-white');
+                    btn.classList.add('bg-gray-200', 'text-gray-700');
+                });
+                const activeBtn = document.querySelector(`[data-section="${sectionId.replace('-section', '')}"]`);
+                if (activeBtn) {
+                    activeBtn.classList.add('active', 'bg-blue-600', 'text-white');
+                    activeBtn.classList.remove('bg-gray-200', 'text-gray-700');
+                }
+            };
+            
+            navButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const sectionId = btn.getAttribute('data-section');
+                    if (!userData.isPremium && ['parejas', 'catecismo', 'musica', 'historias', 'plan', 'comunidad'].includes(sectionId)) {
+                        showMessage('Esta funcionalidad es solo para miembros premium. Por favor, inicia sesión para obtener acceso.', 'error');
+                        return;
+                    }
+                    showSection(sectionId + '-section');
+                });
+            });
+
+            // Mostrar la sección de reflexiones por defecto
             showSection('reflexiones-section');
         });
     </script>
