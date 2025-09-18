@@ -1,0 +1,57 @@
+[debug] [2025-09-15T23:09:04.976Z] ----------------------------------------------------------------------
+[debug] [2025-09-15T23:09:05.009Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2025-09-15T23:09:05.013Z] CLI Version:   14.15.1
+[debug] [2025-09-15T23:09:05.014Z] Platform:      win32
+[debug] [2025-09-15T23:09:05.016Z] Node Version:  v22.19.0
+[debug] [2025-09-15T23:09:05.019Z] Time:          Mon Sep 15 2025 18:09:05 GMT-0500 (hora estándar de Colombia)
+[debug] [2025-09-15T23:09:05.021Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-09-15T23:09:06.719Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-09-15T23:09:06.721Z] > authorizing via signed-in user (teducing@gmail.com)
+[debug] [2025-09-15T23:09:06.722Z] [iam] checking project kris-d9a63 for permissions ["firebase.projects.get"]
+[debug] [2025-09-15T23:09:06.727Z] Checked if tokens are valid: true, expires at: 1757980659100
+[debug] [2025-09-15T23:09:06.727Z] Checked if tokens are valid: true, expires at: 1757980659100
+[debug] [2025-09-15T23:09:06.731Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/kris-d9a63:testIamPermissions [none]
+[debug] [2025-09-15T23:09:06.732Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/kris-d9a63:testIamPermissions x-goog-quota-user=projects/kris-d9a63
+[debug] [2025-09-15T23:09:06.732Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/kris-d9a63:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2025-09-15T23:09:13.159Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/kris-d9a63:testIamPermissions 200
+[debug] [2025-09-15T23:09:13.159Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/kris-d9a63:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2025-09-15T23:09:13.163Z] Checked if tokens are valid: true, expires at: 1757980659100
+[debug] [2025-09-15T23:09:13.163Z] Checked if tokens are valid: true, expires at: 1757980659100
+[debug] [2025-09-15T23:09:13.164Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/kris-d9a63/services/cloudresourcemanager.googleapis.com [none]
+[debug] [2025-09-15T23:09:13.164Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/kris-d9a63/services/cloudresourcemanager.googleapis.com x-goog-quota-user=projects/kris-d9a63
+[debug] [2025-09-15T23:09:21.132Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/kris-d9a63/services/cloudresourcemanager.googleapis.com 200
+[debug] [2025-09-15T23:09:21.133Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/kris-d9a63/services/cloudresourcemanager.googleapis.com [omitted]
+[debug] [2025-09-15T23:09:21.215Z] Checked if tokens are valid: true, expires at: 1757980659100
+[debug] [2025-09-15T23:09:21.216Z] Checked if tokens are valid: true, expires at: 1757980659100
+[debug] [2025-09-15T23:09:21.216Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/kris-d9a63 [none]
+[debug] [2025-09-15T23:09:26.658Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/kris-d9a63 200
+[debug] [2025-09-15T23:09:26.658Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/kris-d9a63 {"projectNumber":"299754246982","projectId":"kris-d9a63","lifecycleState":"ACTIVE","name":"KRIs","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-09-14T23:16:19.163873Z"}
+[info] 
+[info] === Serving from 'C:\Users\lenovo\Desktop\Proyecto KRIs'...
+[info] 
+[debug] [2025-09-15T23:09:26.668Z] Checked if tokens are valid: true, expires at: 1757980659100
+[debug] [2025-09-15T23:09:26.668Z] Checked if tokens are valid: true, expires at: 1757980659100
+[debug] [2025-09-15T23:09:26.726Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/kris-d9a63/sites 
+[debug] [2025-09-15T23:09:34.179Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/kris-d9a63/sites 200
+[debug] [2025-09-15T23:09:34.180Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/kris-d9a63/sites {"sites":[{"name":"projects/kris-d9a63/sites/kris-d9a63","defaultUrl":"https://kris-d9a63.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2025-09-15T23:09:34.180Z] Checked if tokens are valid: true, expires at: 1757980659100
+[debug] [2025-09-15T23:09:34.181Z] Checked if tokens are valid: true, expires at: 1757980659100
+[debug] [2025-09-15T23:09:34.181Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/kris-d9a63/webApps/-/config [none]
+[debug] [2025-09-15T23:09:40.408Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/kris-d9a63/webApps/-/config 200
+[debug] [2025-09-15T23:09:40.408Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/kris-d9a63/webApps/-/config {"projectId":"kris-d9a63","appId":"1:299754246982:web:e53e04fffe92d2b33e4b47","storageBucket":"kris-d9a63.firebasestorage.app","apiKey":"AIzaSyBjPcHsXdUUAtvZGYzcRfHL6Wg0c5G9Ojw","authDomain":"kris-d9a63.firebaseapp.com","messagingSenderId":"299754246982"}
+[debug] [2025-09-15T23:09:40.464Z] Checked if tokens are valid: true, expires at: 1757980659100
+[debug] [2025-09-15T23:09:40.464Z] Checked if tokens are valid: true, expires at: 1757980659100
+[debug] [2025-09-15T23:09:40.466Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/kris-d9a63 [none]
+[debug] [2025-09-15T23:09:40.803Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/kris-d9a63 200
+[debug] [2025-09-15T23:09:40.803Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/kris-d9a63 {"projectId":"kris-d9a63","projectNumber":"299754246982","displayName":"KRIs","name":"projects/kris-d9a63","resources":{"hostingSite":"kris-d9a63"},"state":"ACTIVE","etag":"1_aa179146-baf9-4025-9548-518fadca020c"}
+[info] +  hosting[kris-d9a63]: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[info] i  hosting: ::1 - - [15/Sep/2025:23:12:31 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [15/Sep/2025:23:12:31 +0000] \"GET / HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0\""}}
+[info] i  hosting: ::1 - - [15/Sep/2025:23:12:55 +0000] "GET /favicon.ico HTTP/1.1" 200 - "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [15/Sep/2025:23:12:55 +0000] \"GET /favicon.ico HTTP/1.1\" 200 - \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0\""}}
+[info] i  hosting: ::1 - - [16/Sep/2025:00:15:17 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [16/Sep/2025:00:15:17 +0000] \"GET / HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [16/Sep/2025:00:15:27 +0000] "GET /favicon.ico HTTP/1.1" 200 - "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [16/Sep/2025:00:15:27 +0000] \"GET /favicon.ico HTTP/1.1\" 200 - \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [16/Sep/2025:01:27:23 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [16/Sep/2025:01:27:23 +0000] \"GET / HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [16/Sep/2025:01:27:36 +0000] "GET /favicon.ico HTTP/1.1" 304 - "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [16/Sep/2025:01:27:36 +0000] \"GET /favicon.ico HTTP/1.1\" 304 - \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [16/Sep/2025:01:28:13 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [16/Sep/2025:01:28:13 +0000] \"GET / HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [16/Sep/2025:01:30:26 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [16/Sep/2025:01:30:26 +0000] \"GET / HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0\""}}
+[info] i  hosting: ::1 - - [16/Sep/2025:01:30:31 +0000] "GET /favicon.ico HTTP/1.1" 304 - "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [16/Sep/2025:01:30:31 +0000] \"GET /favicon.ico HTTP/1.1\" 304 - \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0\""}}
