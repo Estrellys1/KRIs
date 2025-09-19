@@ -9,8 +9,9 @@
     "rewrites": [
       {
         "source": "**",
-        "destination": "/KRIs_app.html"
+        "destination": "/index.html"
       }
     ]
   }
+
 }

@@ -1,0 +1,8 @@
+# Directorio de dependencias de Node
+node_modules/
+
+# Archivos de entorno y configuración
+.env
+
+# Archivos de depuración de Firebase
+firebase-debug.log
