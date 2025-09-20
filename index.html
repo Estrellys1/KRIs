@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+11:39 a. m. 20/09/2025<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -27,11 +27,11 @@
             animation: fadeIn 0.5s ease-in-out;
         }
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         .nav-btn.active {
-            background-color: #1e40af;
+            background-color: #1e3a8a; /* Azul Rey */
             color: white;
         }
         .merriweather {
@@ -49,7 +49,7 @@
             to { transform: rotate(360deg); }
         }
         .title-blue {
-            color: #2563eb;
+            color: #1e3a8a; /* Azul Rey */
         }
         /* Modal styles */
         .modal {
@@ -90,7 +90,6 @@
 </head>
 <body class="bg-gray-100 p-6 flex items-center justify-center min-h-screen">
 
-    <!-- Modal para mensajes -->
     <div id="message-modal" class="modal hidden">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
@@ -98,38 +97,30 @@
         </div>
     </div>
 
-    <!-- Contenido principal de la aplicación -->
     <div id="main-content" class="container mx-auto p-4 md:p-8 space-y-8">
         <header class="text-center mb-10">
             <h1 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight merriweather title-blue">KRIs - Tu Guía de Fe</h1>
             <p class="text-lg text-gray-600 mt-2">Unimos la Palabra, la oración y la música en un solo lugar.</p>
         </header>
 
-        <!-- Navegación por secciones -->
         <nav class="card p-4 flex flex-wrap justify-center md:space-x-4 space-x-2 space-y-2 md:space-y-0 text-center">
-            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-blue-600 text-white hover:bg-blue-700" data-section="reflexiones">Reflexiones</button>
-            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="parejas">Parejas (Premium)</button>
-            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="catecismo">Catecismo (Premium)</button>
-            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="musica">Música (Premium)</button>
+            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-blue-800 text-white hover:bg-blue-900" data-section="reflexiones">Reflexiones</button>
+            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="parejas">Parejas</button>
+            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="catecismo">Catecismo</button>
+            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="musica">Música</button>
             <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="rosario">Rosario</button>
             <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="misericordia">Divina Misericordia</button>
             <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="oraciones">Oraciones del día</button>
-            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="historias">Historias para niños (Premium)</button>
-            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="plan">Plan de lectura (Premium)</button>
+            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="historias">Historias para niños</button>
             <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="radio">Radio</button>
-            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="comunidad">Comunidad (Premium)</button>
+            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="comunidad">Comunidad</button>
         </nav>
 
-        <!-- Contenido de las secciones -->
         <div id="app-content">
-
-            <!-- Sección de Reflexiones -->
             <div id="reflexiones-section" class="space-y-8">
                 <section class="card p-6 md:p-8 space-y-4 fade-in">
                     <h2 class="text-2xl font-bold text-gray-700">Análisis Bíblico Profundo</h2>
-                    <p class="text-gray-600">
-                        Ingresa un pasaje bíblico para recibir una reflexión personal y un análisis detallado.
-                    </p>
+                    <p class="text-gray-600">Ingresa un pasaje bíblico para recibir una reflexión personal y un análisis detallado.</p>
                     <div class="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
                         <div class="flex-1">
                             <label for="book-input" class="block text-sm font-medium text-gray-700">Libro:</label>
@@ -144,95 +135,34 @@
                             <input type="text" id="verse-input" placeholder="Ej: 1-5 o 3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-300 p-2">
                         </div>
                     </div>
-                    
-                    <button id="generate-btn" class="w-full bg-green-600 text-white font-bold py-3 px-6 rounded-md shadow-lg hover:bg-green-700 transition duration-300 flex items-center justify-center space-x-2">
+                    <button id="generate-btn" class="w-full bg-blue-800 text-white font-bold py-3 px-6 rounded-md shadow-lg hover:bg-blue-900 transition duration-300 flex items-center justify-center space-x-2">
                         <span>Generar Reflexión y Análisis</span>
                         <div id="loading-spinner-reflexiones" class="spinner hidden"></div>
                     </button>
                 </section>
-
-                <section id="reflection-container" class="space-y-6 mt-8">
-                    <!-- Los resultados del análisis profundo se cargarán aquí -->
-                </section>
+                <section id="reflection-container" class="space-y-6 mt-8"></section>
             </div>
 
-            <!-- Sección de Radio -->
-            <div id="radio-section" class="hidden space-y-8">
-                <section class="card p-6 md:p-8 text-center fade-in">
-                    <h2 class="text-2xl font-bold text-gray-700 mb-4 title-blue">Voces Stereo 89.4 FM</h2>
-                    <p class="text-gray-600 mb-4">Escucha en vivo la mejor programación para acompañar tu fe.</p>
-                    <audio id="audio-player" class="w-full max-w-lg mx-auto" controls>
-                        <source src="https://stream.voces894fm.org/stream" type="audio/mpeg">
-                        Tu navegador no soporta el elemento de audio.
-                    </audio>
-                    <div class="text-sm mt-2 text-center text-gray-500">
-                        Transmisión en vivo: 89.4 FM
-                    </div>
-                </section>
-            </div>
-            
-            <!-- Sección de Rosario (Gratuita con Audio) -->
-            <div id="rosario-section" class="hidden space-y-8">
-                <section class="card p-6 md:p-8 space-y-4 fade-in">
-                    <h2 class="text-2xl font-bold text-gray-700 mb-4">El Santo Rosario</h2>
-                    <p class="text-gray-600">Guía de oración en texto y audio. Usa el botón para comenzar a escuchar.</p>
-                    <div id="rosario-text" class="text-gray-700 space-y-4 text-sm bg-gray-50 p-4 rounded-lg">
-                        <p class="text-gray-500">Presiona 'Reproducir Audio' para cargar la oración.</p>
-                    </div>
-                    <button id="play-rosario-btn" class="w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-md shadow-lg hover:bg-blue-700 transition duration-300 flex items-center justify-center space-x-2">
-                        <span>Reproducir Audio</span>
-                        <div id="loading-spinner-rosario" class="spinner hidden"></div>
-                    </button>
-                    <audio id="rosario-audio" controls class="w-full mt-4 hidden"></audio>
-                </section>
-            </div>
-
-            <!-- Sección de Divina Misericordia (Gratuita con Audio) -->
-            <div id="misericordia-section" class="hidden space-y-8">
-                <section class="card p-6 md:p-8 space-y-4 fade-in">
-                    <h2 class="text-2xl font-bold text-gray-700 mb-4">La Coronilla de la Divina Misericordia</h2>
-                    <p class="text-gray-600">Guía de oración en texto y audio. Usa el botón para comenzar a escuchar.</p>
-                    <div id="misericordia-text" class="text-gray-700 space-y-4 text-sm bg-gray-50 p-4 rounded-lg">
-                        <p class="text-gray-500">Presiona 'Reproducir Audio' para cargar la oración.</p>
-                    </div>
-                    <button id="play-misericordia-btn" class="w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-md shadow-lg hover:bg-blue-700 transition duration-300 flex items-center justify-center space-x-2">
-                        <span>Reproducir Audio</span>
-                        <div id="loading-spinner-misericordia" class="spinner hidden"></div>
-                    </button>
-                    <audio id="misericordia-audio" controls class="w-full mt-4 hidden"></audio>
-                </section>
-            </div>
-
-            <!-- Sección de Oración del Día (Gratuita con Audio) -->
-            <div id="oraciones-section" class="hidden space-y-8">
-                <section class="card p-6 md:p-8 space-y-4 fade-in">
-                    <h2 class="text-2xl font-bold text-gray-700 mb-4">Oración del Día</h2>
-                    <p class="text-gray-600">Una nueva oración inspiradora cada día. Presiona 'Reproducir Audio' para escucharla.</p>
-                    <div id="oracion-text" class="text-gray-700 space-y-4 text-sm bg-gray-50 p-4 rounded-lg">
-                        <p class="text-gray-500">Presiona 'Reproducir Audio' para cargar la oración.</p>
-                    </div>
-                    <button id="play-oracion-btn" class="w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-md shadow-lg hover:bg-blue-700 transition duration-300 flex items-center justify-center space-x-2">
-                        <span>Reproducir Audio</span>
-                        <div id="loading-spinner-oracion" class="spinner hidden"></div>
-                    </button>
-                    <audio id="oracion-audio" controls class="w-full mt-4 hidden"></audio>
-                </section>
-            </div>
-
-            <!-- Secciones premium -->
             <div id="parejas-section" class="hidden space-y-8">
                 <section class="card p-6 md:p-8 text-center fade-in">
-                    <h2 class="text-2xl font-bold text-gray-700 mb-4">Consejos para parejas (Premium)</h2>
-                    <p class="text-gray-600">Accede a contenido exclusivo sobre fe en pareja con una membresía premium.</p>
+                    <h2 class="text-2xl font-bold text-gray-700 mb-4 title-blue">Consejos para parejas (Premium)</h2>
+                    <p class="text-gray-600 mb-4">Obtén un consejo de fe para fortalecer tu relación.</p>
+                    <button id="parejas-btn" class="w-full bg-yellow-500 text-white font-bold py-3 px-6 rounded-md shadow-lg hover:bg-yellow-600 transition duration-300 flex items-center justify-center space-x-2">
+                        <span>Generar Consejo</span>
+                        <div id="loading-spinner-parejas" class="spinner hidden"></div>
+                    </button>
+                    <div id="parejas-response" class="text-gray-700 space-y-4 text-sm bg-gray-50 p-4 rounded-lg mt-4">
+                        <p class="text-gray-500">Tu consejo aparecerá aquí.</p>
+                    </div>
                 </section>
             </div>
-            
-            <!-- Sección de Catecismo (Premium) -->
+
             <div id="catecismo-section" class="hidden space-y-8">
                 <section class="card p-6 md:p-8 space-y-4 fade-in">
                     <h2 class="text-2xl font-bold text-gray-700 mb-4">Catecismo (Premium)</h2>
                     <p class="text-gray-600">Haz una pregunta sobre el Catecismo de la Iglesia Católica para recibir una respuesta detallada.</p>
-                    <input type="text" id="catecismo-input" placeholder="Ej: ¿Qué es la Eucaristía?" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-300 p-2">
+                    <input type="text" id="catecismo-input" placeholder="Ej: ¿Qué es la Eucaristía?"
+                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-300 p-2">
                     <button id="catecismo-btn" class="w-full bg-yellow-500 text-white font-bold py-3 px-6 rounded-md shadow-lg hover:bg-yellow-600 transition duration-300 flex items-center justify-center space-x-2">
                         <span>Buscar en el Catecismo</span>
                         <div id="loading-spinner-catecismo" class="spinner hidden"></div>
@@ -242,50 +172,119 @@
                     </div>
                 </section>
             </div>
-            
+
             <div id="musica-section" class="hidden space-y-8">
                 <section class="card p-6 md:p-8 text-center fade-in">
-                    <h2 class="text-2xl font-bold text-gray-700 mb-4">Música Espiritual (Premium)</h2>
-                    <p class="text-gray-600">Escucha música inspiradora con tu membresía premium.</p>
+                    <h2 class="text-2xl font-bold text-gray-700 mb-4 title-blue">Música Espiritual (Premium)</h2>
+                    <p class="text-gray-600 mb-4">Escucha música inspiradora con tu membresía premium.</p>
+                    <div id="music-player-container">
+                        </div>
                 </section>
             </div>
+
+            <div id="rosario-section" class="hidden space-y-8">
+                <section class="card p-6 md:p-8 space-y-4 fade-in">
+                    <h2 class="text-2xl font-bold text-gray-700 mb-4">El Santo Rosario</h2>
+                    <p class="text-gray-600">Guía de oración en audio.</p>
+                    <audio id="rosario-audio" class="w-full max-w-lg mx-auto" controls>
+                        <source src="" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                </section>
+            </div>
+
+            <div id="misericordia-section" class="hidden space-y-8">
+                <section class="card p-6 md:p-8 space-y-4 fade-in">
+                    <h2 class="text-2xl font-bold text-gray-700 mb-4">La Coronilla de la Divina Misericordia</h2>
+                    <p class="text-gray-600">Guía de oración en audio.</p>
+                    <audio id="misericordia-audio" class="w-full max-w-lg mx-auto" controls>
+                        <source src="" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                </section>
+            </div>
+
+            <div id="oraciones-section" class="hidden space-y-8">
+                <section class="card p-6 md:p-8 space-y-4 fade-in">
+                    <h2 class="text-2xl font-bold text-gray-700 mb-4">Oración del Día</h2>
+                    <p class="text-gray-600">Una nueva oración inspiradora cada día.</p>
+                    <button id="oracion-btn" class="w-full bg-blue-800 text-white font-bold py-3 px-6 rounded-md shadow-lg hover:bg-blue-900 transition duration-300 flex items-center justify-center space-x-2">
+                        <span>Generar Oración</span>
+                        <div id="loading-spinner-oracion" class="spinner hidden"></div>
+                    </button>
+                    <div id="oracion-text" class="text-gray-700 space-y-4 text-sm bg-gray-50 p-4 rounded-lg">
+                        <p class="text-gray-500">Tu oración del día aparecerá aquí.</p>
+                    </div>
+                </section>
+            </div>
+
             <div id="historias-section" class="hidden space-y-8">
-                <section class="card p-6 md:p-8 text-center fade-in">
+                <section class="card p-6 md:p-8 space-y-4 fade-in">
                     <h2 class="text-2xl font-bold text-gray-700 mb-4">Historias para niños (Premium)</h2>
-                    <p class="text-600">Cuentos bíblicos narrados para niños, solo en la versión premium.</p>
+                    <p class="text-gray-600">Obtén historias bíblicas para niños con tu membresía premium.</p>
+                    <input type="text" id="historias-input" placeholder="Ej: Historia de Noé"
+                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-300 p-2">
+                    <button id="historias-btn" class="w-full bg-yellow-500 text-white font-bold py-3 px-6 rounded-md shadow-lg hover:bg-yellow-600 transition duration-300 flex items-center justify-center space-x-2">
+                        <span>Generar Historia</span>
+                        <div id="loading-spinner-historias" class="spinner hidden"></div>
+                    </button>
+                    <div id="historias-response" class="text-gray-700 space-y-4 text-sm bg-gray-50 p-4 rounded-lg mt-4">
+                        <p class="text-gray-500">Tu historia aparecerá aquí.</p>
+                    </div>
                 </section>
             </div>
-            <div id="plan-section" class="hidden space-y-8">
+
+            <div id="radio-section" class="hidden space-y-8">
                 <section class="card p-6 md:p-8 text-center fade-in">
-                    <h2 class="text-2xl font-bold text-gray-700 mb-4">Plan de lectura (Premium)</h2>
-                    <p class="text-gray-600">Planes de lectura guiados disponibles para miembros premium.</p>
+                    <h2 class="text-2xl font-bold text-gray-700 mb-4 title-blue">Radio</h2>
+                    <p class="text-gray-600 mb-4">Escucha tu emisora de fe favorita en vivo.</p>
+                    <audio id="audio-player" class="w-full max-w-lg mx-auto" controls>
+                        <source src="" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
                 </section>
             </div>
-            
-            <!-- Sección de Comunidad (Premium) -->
+
             <div id="comunidad-section" class="hidden space-y-8">
                 <section class="card p-6 md:p-8 space-y-4 fade-in">
-                    <h2 class="text-2xl font-bold text-gray-700 mb-4">Reflexiones de la Comunidad (Premium)</h2>
-                    <p class="text-gray-600">Comparte tus reflexiones y ora con otros usuarios.</p>
-                    
-                    <div class="flex items-center space-x-2 text-gray-500 text-sm">
-                        <span class="font-bold">Tu ID de usuario:</span>
-                        <span id="community-user-id" class="break-all font-mono text-xs"></span>
-                    </div>
+                    <h2 class="text-2xl font-bold text-gray-700 mb-4">Diario de Fe (Premium)</h2>
+                    <p class="text-gray-600 mb-6">Un espacio privado para tu fe y un lugar para compartir con la comunidad de forma anónima.</p>
 
-                    <div id="messages-container" class="bg-gray-50 p-4 rounded-lg h-64 overflow-y-auto space-y-4">
-                        <!-- Los mensajes de la comunidad se cargarán aquí -->
-                    </div>
-                    
-                    <div class="flex space-x-2">
-                        <input type="text" id="message-input" placeholder="Escribe tu mensaje..." class="flex-1 rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-300 p-2">
-                        <button id="send-message-btn" class="bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700 transition">Enviar</button>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-700 mb-2">Tu Espacio Privado</h3>
+                            
+                            <div class="mb-6">
+                                <label for="private-journal" class="block text-sm font-medium text-gray-700 mb-1">📝 Diario / Reflexiones Personales</label>
+                                <textarea id="private-journal" rows="6" class="w-full p-2 border rounded-md"></textarea>
+                                <button id="save-journal-btn" class="w-full mt-2 bg-blue-500 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-600 transition">Guardar en mi Diario</button>
+                                <p id="journal-message" class="text-sm mt-2 text-green-600"></p>
+                            </div>
+
+                            <div>
+                                <label for="favorite-texts" class="block text-sm font-medium text-gray-700 mb-1">⭐ Textos Preferidos</label>
+                                <textarea id="favorite-texts" rows="4" class="w-full p-2 border rounded-md"></textarea>
+                                <button id="save-favorites-btn" class="w-full mt-2 bg-blue-500 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-600 transition">Guardar Textos Favoritos</button>
+                                <p id="favorites-message" class="text-sm mt-2 text-green-600"></p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-700 mb-2">Peticiones de la Comunidad</h3>
+
+                            <div class="mb-6">
+                                <label for="prayer-request" class="block text-sm font-medium text-gray-700 mb-1">🙏 Publica una Petición de Oración (Anónima)</label>
+                                <textarea id="prayer-request" rows="3" class="w-full p-2 border rounded-md" placeholder="Escribe tu petición aquí..."></textarea>
+                                <button id="send-prayer-btn" class="w-full mt-2 bg-blue-800 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-900 transition">Publicar Petición</button>
+                                <div id="prayer-list-container" class="mt-4 bg-gray-50 p-4 rounded-lg h-48 overflow-y-auto space-y-4">
+                                    </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </div>
         </div>
 
-        <!-- Sección de Perfil, Login y Premium -->
         <section id="profile-section" class="card p-6 md:p-8 mt-8 space-y-4 text-center">
             <div id="login-container">
                 <h2 class="text-2xl font-bold text-gray-700">Inicia sesión o Regístrate</h2>
@@ -293,7 +292,7 @@
                 <div class="space-y-4 mt-4">
                     <input type="email" id="email-input" class="w-full p-3 border rounded-md" placeholder="Correo electrónico">
                     <input type="password" id="password-input" class="w-full p-3 border rounded-md" placeholder="Contraseña">
-                    <button id="login-btn" class="w-full bg-blue-600 text-white p-3 rounded-md font-bold hover:bg-blue-700 transition">Iniciar Sesión</button>
+                    <button id="login-btn" class="w-full bg-blue-800 text-white p-3 rounded-md font-bold hover:bg-blue-900 transition">Iniciar Sesión</button>
                     <button id="register-btn" class="w-full bg-green-600 text-white p-3 rounded-md font-bold hover:bg-green-700 transition">Regístrate</button>
                 </div>
                 <p id="auth-message" class="text-red-500 text-sm mt-4 text-center"></p>
@@ -302,55 +301,46 @@
             <div id="profile-info" class="hidden">
                 <h2 class="text-2xl font-bold text-gray-700">Tu Perfil</h2>
                 <p id="user-status" class="text-gray-500 text-sm mt-2">Cargando...</p>
-                <p id="user-id-display" class="text-gray-400 text-xs break-all hidden"></p>
                 <div id="premium-info" class="space-y-2 mt-4">
-                    <p id="subscription-status" class="font-bold text-lg text-blue-600">Versión Gratuita</p>
-                    <p class="text-gray-600">Obtén acceso ilimitado a todas las funcionalidades premium, incluyendo:</p>
+                    <p id="subscription-status" class="font-bold text-lg text-blue-800">Versión Gratuita</p>
+                    <p class="text-gray-600">Obtén acceso ilimitado a todas las funcionalidades premium:</p>
                     <ul class="list-disc list-inside text-left mx-auto max-w-sm space-y-1 text-gray-700">
-                        <li>Parejas</li>
-                        <li>Catecismo</li>
-                        <li>Música</li>
-                        <li>Historias para niños</li>
-                        <li>Plan de lectura</li>
-                        <li>Comunidad</li>
+                        <li>**Parejas**: Consejos y versículos para la vida en pareja.</li>
+                        <li>**Catecismo**: Preguntas y respuestas detalladas.</li>
+                        <li>**Música**: Escucha streaming de música espiritual.</li>
+                        <li>**Historias para niños**: Cuentos bíblicos narrados.</li>
+                        <li>**Comunidad**: Comparte tus reflexiones y ora con otros.</li>
                     </ul>
                 </div>
-                <button id="premium-btn" class="w-full bg-yellow-500 text-white font-bold py-3 px-6 rounded-md shadow-lg hover:bg-yellow-600 transition duration-300 mt-4">
-                    Obtener Premium
-                </button>
-                <button id="logout-btn" class="w-full bg-red-600 text-white font-bold py-3 px-6 rounded-md shadow-lg hover:bg-red-700 transition duration-300 mt-4">
-                    Cerrar Sesión
-                </button>
+                <button id="premium-btn" class="w-full bg-yellow-500 text-white font-bold py-3 px-6 rounded-md shadow-lg hover:bg-yellow-600 transition duration-300 mt-4">Obtener Premium</button>
+                <button id="logout-btn" class="w-full bg-red-600 text-white font-bold py-3 px-6 rounded-md shadow-lg hover:bg-red-700 transition duration-300 mt-4">Cerrar Sesión</button>
             </div>
         </section>
     </div>
 
-    <!-- Firebase y Lógica de la Aplicación -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
         import { getFirestore, doc, getDoc, setDoc, updateDoc, collection, query, addDoc, onSnapshot, orderBy, Timestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-        
-        // Variables de entorno de Canvas. NO MODIFICAR.
+
         const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
         const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
         const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
-        
-        // Inicializar Firebase
+
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
         const db = getFirestore(app);
         
-        // API Key para Gemini (dejar vacía, se maneja en el entorno)
-        const apiKey = ""; 
-
+        // IMPORTANTE: DEBES PEGAR TU CLAVE API DE GEMINI AQUÍ
+        const apiKey = "";
         let userId = null;
         let userData = {
             isPremium: false,
-            subscriptionEndDate: null
+            subscriptionEndDate: null,
+            privateJournal: '',
+            favoriteTexts: ''
         };
 
-        // Elementos del DOM
         const loginContainer = document.getElementById('login-container');
         const profileInfo = document.getElementById('profile-info');
         const emailInput = document.getElementById('email-input');
@@ -360,28 +350,45 @@
         const logoutBtn = document.getElementById('logout-btn');
         const authMessage = document.getElementById('auth-message');
         const userStatus = document.getElementById('user-status');
-        const userIdDisplay = document.getElementById('user-id-display');
         const premiumBtn = document.getElementById('premium-btn');
         const subscriptionStatus = document.getElementById('subscription-status');
+        
         const generateBtn = document.getElementById('generate-btn');
         const loadingSpinnerReflexiones = document.getElementById('loading-spinner-reflexiones');
         const reflectionContainer = document.getElementById('reflection-container');
         const bookInput = document.getElementById('book-input');
         const chapterInput = document.getElementById('chapter-input');
         const verseInput = document.getElementById('verse-input');
+
+        const parejasBtn = document.getElementById('parejas-btn');
+        const loadingSpinnerParejas = document.getElementById('loading-spinner-parejas');
+        const parejasResponse = document.getElementById('parejas-response');
+
         const catecismoInput = document.getElementById('catecismo-input');
         const catecismoBtn = document.getElementById('catecismo-btn');
         const loadingSpinnerCatecismo = document.getElementById('loading-spinner-catecismo');
         const catecismoResponse = document.getElementById('catecismo-response');
-        const playOracionBtn = document.getElementById('play-oracion-btn');
-        const oracionTextEl = document.getElementById('oracion-text');
-        const loadingSpinnerOracion = document.getElementById('loading-spinner-oracion');
-        const messagesContainer = document.getElementById('messages-container');
-        const messageInput = document.getElementById('message-input');
-        const sendMessageBtn = document.getElementById('send-message-btn');
-        const communityUserId = document.getElementById('community-user-id');
 
-        // Modal de mensajes
+        const oracionBtn = document.getElementById('oracion-btn');
+        const loadingSpinnerOracion = document.getElementById('loading-spinner-oracion');
+        const oracionText = document.getElementById('oracion-text');
+
+        const historiasInput = document.getElementById('historias-input');
+        const historiasBtn = document.getElementById('historias-btn');
+        const loadingSpinnerHistorias = document.getElementById('loading-spinner-historias');
+        const historiasResponse = document.getElementById('historias-response');
+
+        // Nuevos elementos para la sección de Comunidad
+        const privateJournal = document.getElementById('private-journal');
+        const saveJournalBtn = document.getElementById('save-journal-btn');
+        const journalMessage = document.getElementById('journal-message');
+        const favoriteTexts = document.getElementById('favorite-texts');
+        const saveFavoritesBtn = document.getElementById('save-favorites-btn');
+        const favoritesMessage = document.getElementById('favorites-message');
+        const prayerRequest = document.getElementById('prayer-request');
+        const sendPrayerBtn = document.getElementById('send-prayer-btn');
+        const prayerListContainer = document.getElementById('prayer-list-container');
+
         const messageModal = document.getElementById('message-modal');
         const modalMessage = document.getElementById('modal-message');
         const closeBtn = document.querySelector('.close-btn');
@@ -400,19 +407,14 @@
                 messageModal.classList.add('hidden');
             }
         }
-        
-        // Lógica de autenticación y datos de usuario
+
         onAuthStateChanged(auth, async (user) => {
             if (user) {
                 userId = user.uid;
                 userStatus.textContent = `Sesión iniciada como: ${user.email || 'Usuario Anónimo'}`;
-                userIdDisplay.textContent = `ID de usuario: ${userId}`;
-                communityUserId.textContent = userId;
-                userIdDisplay.classList.remove('hidden');
                 loginContainer.classList.add('hidden');
                 profileInfo.classList.remove('hidden');
 
-                // Obtener datos del usuario desde Firestore
                 const userDocRef = doc(db, `/artifacts/${appId}/users/${userId}/profile/${userId}`);
                 const userDocSnap = await getDoc(userDocRef);
                 
@@ -420,28 +422,27 @@
                     userData = userDocSnap.data();
                     if (userData.isPremium) {
                         subscriptionStatus.textContent = 'Versión Premium';
-                        subscriptionStatus.classList.remove('text-blue-600');
+                        subscriptionStatus.classList.remove('text-blue-800');
                         subscriptionStatus.classList.add('text-yellow-500');
                         premiumBtn.classList.add('hidden');
                     }
+                    privateJournal.value = userData.privateJournal || '';
+                    favoriteTexts.value = userData.favoriteTexts || '';
                 } else {
                     await setDoc(userDocRef, userData);
                 }
             } else {
                 userId = null;
                 userStatus.textContent = 'No hay sesión iniciada.';
-                userIdDisplay.classList.add('hidden');
-                communityUserId.textContent = 'N/A';
                 loginContainer.classList.remove('hidden');
                 profileInfo.classList.add('hidden');
                 subscriptionStatus.textContent = 'Versión Gratuita';
-                subscriptionStatus.classList.add('text-blue-600');
+                subscriptionStatus.classList.add('text-blue-800');
                 subscriptionStatus.classList.remove('text-yellow-500');
                 premiumBtn.classList.remove('hidden');
             }
         });
 
-        // Autenticación inicial con el token de Canvas
         async function initialAuth() {
             try {
                 if (initialAuthToken) {
@@ -473,7 +474,6 @@
                 await createUserWithEmailAndPassword(auth, email, password);
                 authMessage.textContent = '¡Registro exitoso! Sesión iniciada automáticamente.';
             } catch (error) {
-                authMessage.textContent = `Error: ${error.message}`;
             }
         });
 
@@ -491,60 +491,53 @@
                 showModal('Debes iniciar sesión para obtener la versión Premium.');
                 return;
             }
-
-            // Simular actualización a Premium
             const userDocRef = doc(db, `/artifacts/${appId}/users/${userId}/profile/${userId}`);
             await updateDoc(userDocRef, { isPremium: true });
-            
             showModal('¡Felicidades! Ahora tienes la versión Premium.');
             subscriptionStatus.textContent = 'Versión Premium';
-            subscriptionStatus.classList.remove('text-blue-600');
+            subscriptionStatus.classList.remove('text-blue-800');
             subscriptionStatus.classList.add('text-yellow-500');
             premiumBtn.classList.add('hidden');
         });
 
-        // Lógica para cambiar de sección
         const navButtons = document.querySelectorAll('.nav-btn');
         const sections = document.querySelectorAll('#app-content > div');
 
         navButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const sectionId = button.getAttribute('data-section');
-                
-                // Manejar secciones premium
-                if (['parejas', 'catecismo', 'musica', 'historias', 'plan', 'comunidad'].includes(sectionId)) {
-                    if (!userData.isPremium) {
-                        showModal("Esta es una función premium. Por favor, obtén la membresía premium para acceder.");
-                        return;
-                    }
+                const premiumSections = ['parejas', 'catecismo', 'musica', 'historias', 'comunidad'];
+
+                if (premiumSections.includes(sectionId) && !userData.isPremium) {
+                    showModal("Esta es una función premium. Por favor, obtén la membresía premium para acceder.");
+                    return;
                 }
 
-                navButtons.forEach(btn => btn.classList.remove('active', 'bg-blue-600', 'text-white'));
                 navButtons.forEach(btn => {
-                    if (!btn.classList.contains('active')) {
-                        btn.classList.add('bg-gray-200', 'text-gray-700');
-                    }
+                    btn.classList.remove('active', 'bg-blue-800', 'text-white');
+                    btn.classList.add('bg-gray-200', 'text-gray-700');
                 });
-                button.classList.add('active', 'bg-blue-600', 'text-white');
+                button.classList.add('active', 'bg-blue-800', 'text-white');
                 button.classList.remove('bg-gray-200', 'text-gray-700');
-
                 sections.forEach(section => {
                     section.classList.add('hidden');
                 });
                 document.getElementById(`${sectionId}-section`).classList.remove('hidden');
 
-                // Si la sección es comunidad, iniciar el listener de mensajes
                 if (sectionId === 'comunidad' && userData.isPremium) {
-                    setupCommunityChat();
+                    setupCommunityListeners();
                 }
             });
         });
 
-        // Lógica de generación de reflexión con la API de la Biblia y la API de Gemini
+        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+        // Lógica de generación de reflexión
         generateBtn.addEventListener('click', async () => {
             const book = bookInput.value.trim();
             const chapter = chapterInput.value.trim();
             const verse = verseInput.value.trim();
+            const reference = `${book} ${chapter}:${verse}`;
 
             if (!book || !chapter || !verse) {
                 showModal("Por favor, ingresa el libro, capítulo y versículo.");
@@ -553,55 +546,32 @@
 
             loadingSpinnerReflexiones.classList.remove('hidden');
             generateBtn.disabled = true;
-
-            const reference = `${book} ${chapter}:${verse}`;
-            const bibleApiUrl = `https://bible-api.com/${encodeURIComponent(reference)}?translation=RVR60`;
-
+            reflectionContainer.innerHTML = '';
+            
             try {
-                // 1. Obtener el texto del versículo desde la API de la Biblia
-                const bibleResponse = await fetch(bibleApiUrl);
-                const bibleData = await bibleResponse.json();
-                
-                reflectionContainer.innerHTML = '';
-                
-                if (bibleData.verses && bibleData.verses.length > 0) {
-                    const verseText = bibleData.verses.map(v => v.text).join(' ');
-                    const fullReference = bibleData.reference;
-                    
-                    // 2. Generar la reflexión usando la API de Gemini
-                    const geminiApiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
-                    const prompt = `Genera una reflexión personal y un análisis detallado sobre el siguiente pasaje bíblico: ${fullReference} - "${verseText}"`;
-                    const payload = { contents: [{ parts: [{ text: prompt }] }] };
+                const prompt = `Genera una reflexión personal y un análisis detallado sobre el siguiente pasaje bíblico: ${reference}. Enfócate en la aplicación práctica del versículo en la vida diaria.`;
+                const payload = { contents: [{ parts: [{ text: prompt }] }] };
+                const geminiResponse = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const geminiResult = await geminiResponse.json();
+                const reflectionText = geminiResult?.candidates?.[0]?.content?.parts?.[0]?.text;
 
-                    const geminiResponse = await fetch(geminiApiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-                    const geminiResult = await geminiResponse.json();
-                    const reflectionText = geminiResult?.candidates?.[0]?.content?.parts?.[0]?.text;
-
-                    const reflectionHTML = `
-                        <section class="card p-6 md:p-8 space-y-4 fade-in">
-                            <h3 class="text-xl font-bold text-gray-700">${fullReference}</h3>
-                            <div class="bg-gray-50 p-4 rounded-lg text-sm text-gray-700 space-y-2">
-                                <p>"${verseText}"</p>
-                            </div>
-                            <div class="mt-4">
-                                <h4 class="font-bold text-lg text-gray-800">Análisis y Reflexión</h4>
-                                <p class="text-gray-600 mt-2">${reflectionText}</p>
-                            </div>
-                        </section>
-                    `;
-                    reflectionContainer.innerHTML = reflectionHTML;
-
-                } else {
-                    showModal(`No se encontró el pasaje bíblico: ${reference}. Por favor, verifica el libro, capítulo y versículo.`);
-                }
-
+                const reflectionHTML = `
+                    <section class="card p-6 md:p-8 space-y-4 fade-in">
+                        <h3 class="text-xl font-bold text-gray-700">Reflexión sobre ${reference}</h3>
+                        <div class="mt-4">
+                            <h4 class="font-bold text-lg text-gray-800">Análisis y Reflexión</h4>
+                            <p class="text-gray-600 mt-2">${reflectionText || 'No se pudo generar una respuesta. Por favor, intenta de nuevo.'}</p>
+                        </div>
+                    </section>
+                `;
+                reflectionContainer.innerHTML = reflectionHTML;
             } catch (error) {
-                console.error("Error al obtener el pasaje bíblico o la reflexión:", error);
-                showModal("Ocurrió un error al buscar el pasaje. Por favor, revisa tu conexión a internet o intenta de nuevo más tarde.");
+                console.error("Error al generar la reflexión:", error);
+                showModal("Ocurrió un error al generar la reflexión. Por favor, revisa tu conexión a internet o intenta de nuevo más tarde.");
             } finally {
                 loadingSpinnerReflexiones.classList.add('hidden');
                 generateBtn.disabled = false;
@@ -614,31 +584,24 @@
                 showModal("Esta es una función premium. Por favor, obtén la membresía premium para acceder.");
                 return;
             }
-            
             const question = catecismoInput.value.trim();
             if (!question) {
                 showModal("Por favor, ingresa una pregunta para buscar en el Catecismo.");
                 return;
             }
-
             loadingSpinnerCatecismo.classList.remove('hidden');
             catecismoBtn.disabled = true;
-
             try {
-                const geminiApiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
                 const prompt = `Responde la siguiente pregunta sobre el Catecismo de la Iglesia Católica: ${question}. Sé conciso y usa un lenguaje claro.`;
                 const payload = { contents: [{ parts: [{ text: prompt }] }] };
-
-                const geminiResponse = await fetch(geminiApiUrl, {
+                const geminiResponse = await fetch(API_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
                 });
                 const geminiResult = await geminiResponse.json();
                 const responseText = geminiResult?.candidates?.[0]?.content?.parts?.[0]?.text;
-
                 catecismoResponse.innerHTML = `<p>${responseText || 'No se pudo generar una respuesta. Intenta de nuevo.'}</p>`;
-
             } catch (error) {
                 console.error("Error al generar la respuesta del Catecismo:", error);
                 showModal("Ocurrió un error al buscar la respuesta. Intenta de nuevo.");
@@ -647,165 +610,162 @@
                 catecismoBtn.disabled = false;
             }
         });
-
-        // Lógica para reproducir audio (TTS) con la API de Gemini
-        async function playAudio(text, loadingSpinner, audioEl) {
-            loadingSpinner.classList.remove('hidden');
-
-            const payload = {
-                contents: [{
-                    parts: [{ text: text }]
-                }],
-                generationConfig: {
-                    responseModalities: ["AUDIO"],
-                    speechConfig: {
-                        voiceConfig: {
-                            prebuiltVoiceConfig: { voiceName: "Puck" }
-                        }
-                    }
-                },
-                model: "gemini-2.5-flash-preview-tts"
-            };
-            const apiKey = "";
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`;
-
-            try {
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-                const result = await response.json();
-                const audioData = result?.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
-                const mimeType = result?.candidates?.[0]?.content?.parts?.[0]?.inlineData?.mimeType;
-
-                if (audioData && mimeType && mimeType.startsWith("audio/")) {
-                    const audioBuffer = Uint8Array.from(atob(audioData), c => c.charCodeAt(0)).buffer;
-                    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                    const audioSource = audioContext.createBufferSource();
-                    const decodedData = new Int16Array(audioBuffer);
-                    const pcmData = new Float32Array(decodedData.length);
-                    for (let i = 0; i < decodedData.length; i++) {
-                        pcmData[i] = decodedData[i] / 32768;
-                    }
-                    const newAudioBuffer = audioContext.createBuffer(1, pcmData.length, audioContext.sampleRate);
-                    newAudioBuffer.copyToChannel(pcmData, 0);
-                    audioSource.buffer = newAudioBuffer;
-                    audioSource.connect(audioContext.destination);
-                    audioSource.start();
-
-                } else {
-                    throw new Error("Respuesta de audio no válida de la API.");
-                }
-            } catch (error) {
-                console.error("Error al reproducir el audio:", error);
-                showModal("Ocurrió un error al reproducir la oración. Por favor, inténtalo de nuevo.");
-            } finally {
-                loadingSpinner.classList.add('hidden');
+        
+        // Lógica para la sección de Parejas (AHORA PREMIUM)
+        parejasBtn.addEventListener('click', async () => {
+            if (!userData.isPremium) {
+                showModal("Esta es una función premium. Por favor, obtén la membresía premium para acceder.");
+                return;
             }
-        }
-
-        // Lógica de los botones de audio
-        const rosarioTextEl = document.getElementById('rosario-text');
-        const misericordiaTextEl = document.getElementById('misericordia-text');
-        
-        document.getElementById('play-rosario-btn').addEventListener('click', () => {
-            const rosarioText = "En el nombre del Padre, del Hijo, y del Espíritu Santo. Amén. Padre Nuestro que estás en el cielo... Dios te salve, María, llena eres de gracia... Gloria al Padre, y al Hijo, y al Espíritu Santo...";
-            rosarioTextEl.innerHTML = `<p>${rosarioText}</p>`;
-            playAudio(rosarioText, document.getElementById('loading-spinner-rosario'));
-        });
-
-        document.getElementById('play-misericordia-btn').addEventListener('click', () => {
-            const misericordiaText = "Oh Sangre y Agua que brotaste del Sagrado Corazón de Jesús como una fuente de misericordia para nosotros, en Ti confío. Padre eterno, te ofrezco el Cuerpo y la Sangre, el Alma y la Divinidad de tu amadísimo Hijo, Nuestro Señor Jesucristo, como propiciación por nuestros pecados y los del mundo entero...";
-            misericordiaTextEl.innerHTML = `<p>${misericordiaText}</p>`;
-            playAudio(misericordiaText, document.getElementById('loading-spinner-misericordia'));
-        });
-        
-        playOracionBtn.addEventListener('click', async () => {
-             // 1. Generar la oración del día con la API de Gemini
-            loadingSpinnerOracion.classList.remove('hidden');
-            playOracionBtn.disabled = true;
-
+            loadingSpinnerParejas.classList.remove('hidden');
+            parejasBtn.disabled = true;
             try {
-                const geminiApiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
-                const prompt = "Escribe una oración inspiradora para el día de hoy, con un tono esperanzador y de fe. Que sea concisa, de 2-3 frases.";
+                const prompt = `Genera un consejo de fe para parejas, enfócate en la unidad y el amor. Al final, incluye un versículo bíblico relacionado.`;
                 const payload = { contents: [{ parts: [{ text: prompt }] }] };
-
-                const geminiResponse = await fetch(geminiApiUrl, {
+                const geminiResponse = await fetch(API_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
                 });
                 const geminiResult = await geminiResponse.json();
-                const oracionText = geminiResult?.candidates?.[0]?.content?.parts?.[0]?.text;
-                
-                if (oracionText) {
-                    oracionTextEl.innerHTML = `<p class="fade-in">${oracionText}</p>`;
-                    // 2. Reproducir la oración generada
-                    playAudio(oracionText, loadingSpinnerOracion);
-                } else {
-                    throw new Error("No se pudo generar la oración.");
-                }
+                const responseText = geminiResult?.candidates?.[0]?.content?.parts?.[0]?.text;
+                parejasResponse.innerHTML = `<p>${responseText || 'No se pudo generar una respuesta. Intenta de nuevo.'}</p>`;
+            } catch (error) {
+                console.error("Error al generar el consejo de parejas:", error);
+                showModal("Ocurrió un error al generar el consejo. Intenta de nuevo.");
+            } finally {
+                loadingSpinnerParejas.classList.add('hidden');
+                parejasBtn.disabled = false;
+            }
+        });
+
+        // Lógica para la sección de Oración del Día
+        oracionBtn.addEventListener('click', async () => {
+            loadingSpinnerOracion.classList.remove('hidden');
+            oracionBtn.disabled = true;
+            try {
+                const prompt = `Genera una oración corta y poderosa para el día de hoy, centrada en la gratitud y la fe.`;
+                const payload = { contents: [{ parts: [{ text: prompt }] }] };
+                const geminiResponse = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const geminiResult = await geminiResponse.json();
+                const responseText = geminiResult?.candidates?.[0]?.content?.parts?.[0]?.text;
+                oracionText.innerHTML = `<p>${responseText || 'No se pudo generar la oración. Intenta de nuevo.'}</p>`;
             } catch (error) {
                 console.error("Error al generar la oración:", error);
                 showModal("Ocurrió un error al generar la oración. Intenta de nuevo.");
             } finally {
                 loadingSpinnerOracion.classList.add('hidden');
-                playOracionBtn.disabled = false;
+                oracionBtn.disabled = false;
             }
         });
-        
-        // Lógica para la sección de Comunidad
-        function setupCommunityChat() {
-            if (!userId) {
-                messagesContainer.innerHTML = '<p class="text-gray-500 text-center">Inicia sesión para ver los mensajes de la comunidad.</p>';
+
+        // Lógica para la sección de Historias para Niños
+        historiasBtn.addEventListener('click', async () => {
+            if (!userData.isPremium) {
+                showModal("Esta es una función premium. Por favor, obtén la membresía premium para acceder.");
                 return;
             }
+            const storyTopic = historiasInput.value.trim();
+            if (!storyTopic) {
+                showModal("Por favor, ingresa un tema para la historia.");
+                return;
+            }
+            loadingSpinnerHistorias.classList.remove('hidden');
+            historiasBtn.disabled = true;
+            try {
+                const prompt = `Crea una historia bíblica para niños sobre el tema: "${storyTopic}". El lenguaje debe ser sencillo y fácil de entender.`;
+                const payload = { contents: [{ parts: [{ text: prompt }] }] };
+                const geminiResponse = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const geminiResult = await geminiResponse.json();
+                const responseText = geminiResult?.candidates?.[0]?.content?.parts?.[0]?.text;
+                historiasResponse.innerHTML = `<p>${responseText || 'No se pudo generar la historia. Intenta de nuevo.'}</p>`;
+            } catch (error) {
+                console.error("Error al generar la historia:", error);
+                showModal("Ocurrió un error al generar la historia. Intenta de nuevo.");
+            } finally {
+                loadingSpinnerHistorias.classList.add('hidden');
+                historiasBtn.disabled = false;
+            }
+        });
 
-            const messagesRef = collection(db, `/artifacts/${appId}/public/data/community_messages`);
-            const q = query(messagesRef, orderBy('createdAt'));
-
+        // Lógica para las nuevas funcionalidades de la Comunidad
+        async function setupCommunityListeners() {
+            // Cargar peticiones de oración
+            const prayerListRef = collection(db, `/artifacts/${appId}/public/data/prayer_requests`);
+            const q = query(prayerListRef, orderBy('createdAt', 'desc'));
             onSnapshot(q, (snapshot) => {
-                let messagesHTML = '';
+                let prayersHTML = '';
                 snapshot.forEach(doc => {
                     const data = doc.data();
                     const date = data.createdAt ? data.createdAt.toDate().toLocaleString() : 'Fecha desconocida';
-                    messagesHTML += `
-                        <div class="p-2 rounded-lg ${data.userId === userId ? 'bg-blue-100 text-right' : 'bg-gray-100 text-left'}">
-                            <span class="text-xs font-bold ${data.userId === userId ? 'text-blue-600' : 'text-gray-600'}">${data.userId === userId ? 'Tú' : data.userId}</span>
+                    prayersHTML += `
+                        <div class="p-2 rounded-lg bg-gray-100 text-left">
+                            <span class="text-xs font-bold text-gray-600">Usuario Anónimo</span>
                             <p class="text-sm text-gray-800">${data.text}</p>
                             <span class="text-xs text-gray-400">${date}</span>
                         </div>
                     `;
                 });
-                messagesContainer.innerHTML = messagesHTML;
-                messagesContainer.scrollTop = messagesContainer.scrollHeight; // Desplazar al final
+                prayerListContainer.innerHTML = prayersHTML;
+                prayerListContainer.scrollTop = prayerListContainer.scrollHeight;
             }, (error) => {
-                console.error("Error al escuchar los mensajes:", error);
-                showModal("Hubo un problema al cargar los mensajes de la comunidad.");
+                console.error("Error al escuchar las peticiones de oración:", error);
+                showModal("Hubo un problema al cargar las peticiones de oración.");
+            });
+
+            // Guardar diario personal
+            saveJournalBtn.addEventListener('click', async () => {
+                if (!userId) {
+                    showModal("Debes iniciar sesión para guardar tus notas.");
+                    return;
+                }
+                const journalText = privateJournal.value.trim();
+                const userDocRef = doc(db, `/artifacts/${appId}/users/${userId}/profile/${userId}`);
+                await updateDoc(userDocRef, { privateJournal: journalText });
+                journalMessage.textContent = 'Diario guardado.';
+                setTimeout(() => journalMessage.textContent = '', 3000);
+            });
+
+            // Guardar textos favoritos
+            saveFavoritesBtn.addEventListener('click', async () => {
+                if (!userId) {
+                    showModal("Debes iniciar sesión para guardar tus textos favoritos.");
+                    return;
+                }
+                const favoritesText = favoriteTexts.value.trim();
+                const userDocRef = doc(db, `/artifacts/${appId}/users/${userId}/profile/${userId}`);
+                await updateDoc(userDocRef, { favoriteTexts: favoritesText });
+                favoritesMessage.textContent = 'Textos favoritos guardados.';
+                setTimeout(() => favoritesMessage.textContent = '', 3000);
+            });
+
+            // Enviar petición de oración anónima
+            sendPrayerBtn.addEventListener('click', async () => {
+                if (!userId) {
+                    showModal("Debes iniciar sesión para publicar una petición.");
+                    return;
+                }
+                const prayerText = prayerRequest.value.trim();
+                if (prayerText) {
+                    const prayerListRef = collection(db, `/artifacts/${appId}/public/data/prayer_requests`);
+                    await addDoc(prayerListRef, {
+                        text: prayerText,
+                        createdAt: Timestamp.now()
+                    });
+                    prayerRequest.value = '';
+                }
             });
         }
 
-        sendMessageBtn.addEventListener('click', async () => {
-            if (!userId || !userData.isPremium) {
-                showModal("Debes tener una membresía premium para enviar mensajes en la comunidad.");
-                return;
-            }
-            const messageText = messageInput.value.trim();
-            if (messageText) {
-                const messagesRef = collection(db, `/artifacts/${appId}/public/data/community_messages`);
-                await addDoc(messagesRef, {
-                    text: messageText,
-                    userId: userId,
-                    createdAt: Timestamp.now()
-                });
-                messageInput.value = ''; // Limpiar el campo
-            }
-        });
-
-        // Configuración inicial
         window.onload = initialAuth;
-
     </script>
 </body>
 </html>
