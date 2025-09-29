@@ -107,7 +107,6 @@
             <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-blue-800 text-white hover:bg-blue-900" data-section="reflexiones">Reflexiones</button>
             <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="parejas">Parejas</button>
             <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="catecismo">Catecismo</button>
-            <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="musica">Música</button>
             <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="rosario">Rosario</button>
             <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="misericordia">Divina Misericordia</button>
             <button class="nav-btn px-4 py-2 font-medium rounded-md transition duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-section="oraciones">Oraciones del día</button>
@@ -173,50 +172,92 @@
                 </section>
             </div>
 
-            <div id="musica-section" class="hidden space-y-8">
-                <section class="card p-6 md:p-8 text-center fade-in">
-                    <h2 class="text-2xl font-bold text-gray-700 mb-4 title-blue">Música Espiritual (Premium)</h2>
-                    <p class="text-gray-600 mb-4">Escucha música inspiradora con tu membresía premium.</p>
-                    <div id="music-player-container">
-                        </div>
-                </section>
-            </div>
-
             <div id="rosario-section" class="hidden space-y-8">
-                <section class="card p-6 md:p-8 space-y-4 fade-in">
-                    <h2 class="text-2xl font-bold text-gray-700 mb-4">El Santo Rosario</h2>
-                    <p class="text-gray-600">Guía de oración en audio.</p>
-                    <audio id="rosario-audio" class="w-full max-w-lg mx-auto" controls>
-                        <source src="" type="audio/mpeg">
-                        Tu navegador no soporta el elemento de audio.
-                    </audio>
-                </section>
-            </div>
+    <section class="card p-6 md:p-8 space-y-6 fade-in">
+        <h2 class="text-2xl font-bold text-gray-700 mb-4">El Santo Rosario</h2>
+        <p class="text-gray-600">Selecciona el Misterio que deseas meditar en audio.</p>
 
-            <div id="misericordia-section" class="hidden space-y-8">
-                <section class="card p-6 md:p-8 space-y-4 fade-in">
-                    <h2 class="text-2xl font-bold text-gray-700 mb-4">La Coronilla de la Divina Misericordia</h2>
-                    <p class="text-gray-600">Guía de oración en audio.</p>
-                    <audio id="misericordia-audio" class="w-full max-w-lg mx-auto" controls>
-                        <source src="" type="audio/mpeg">
-                        Tu navegador no soporta el elemento de audio.
-                    </audio>
-                </section>
-            </div>
+        <div class="space-y-3 p-4 border rounded-lg shadow-sm">
+            <h3 class="text-lg font-semibold text-blue-800">1. Misterios Gozosos (Lunes y Sábado)</h3>
+            <audio id="rosario-gozosos-audio" class="w-full" controls>
+                <source src="https://drive.google.com/uc?export=download&id=10Hg1-3wiINDjgj-92umwZf4wMEX1lGKu" type="audio/mpeg">
+                Tu navegador no soporta el audio.
+            </audio>
+        </div>
 
-            <div id="oraciones-section" class="hidden space-y-8">
-                <section class="card p-6 md:p-8 space-y-4 fade-in">
-                    <h2 class="text-2xl font-bold text-gray-700 mb-4">Oración del Día</h2>
-                    <p class="text-gray-600">Una nueva oración inspiradora cada día.</p>
-                    <button id="oracion-btn" class="w-full bg-blue-800 text-white font-bold py-3 px-6 rounded-md shadow-lg hover:bg-blue-900 transition duration-300 flex items-center justify-center space-x-2">
-                        <span>Generar Oración</span>
-                        <div id="loading-spinner-oracion" class="spinner hidden"></div>
-                    </button>
-                    <div id="oracion-text" class="text-gray-700 space-y-4 text-sm bg-gray-50 p-4 rounded-lg">
-                        <p class="text-gray-500">Tu oración del día aparecerá aquí.</p>
-                    </div>
-                </section>
-            </div>
+        <div class="space-y-3 p-4 border rounded-lg shadow-sm">
+            <h3 class="text-lg font-semibold text-blue-800">2. Misterios Luminosos (Jueves)</h3>
+            <audio id="rosario-luminosos-audio" class="w-full" controls>
+                <source src="https://drive.google.com/uc?export=download&id=13la0jUfRMuQCAEEKtmCfBLBBIHWiBUJ9" type="audio/mpeg">
+                Tu navegador no soporta el audio.
+            </audio>
+        </div>
+
+        <div class="space-y-3 p-4 border rounded-lg shadow-sm">
+            <h3 class="text-lg font-semibold text-blue-800">3. Misterios Gloriosos (Miércoles y Domingo)</h3>
+            <audio id="rosario-gloriosos-audio" class="w-full" controls>
+                <source src="https://drive.google.com/uc?export=download&id=1T1Mk2PtKIWVHn2YI0fI6lhjis-Q6l9ci" type="audio/mpeg">
+                Tu navegador no soporta el audio.
+            </audio>
+        </div>
+
+        <div class="space-y-3 p-4 border rounded-lg shadow-sm">
+            <h3 class="text-lg font-semibold text-blue-800">4. Misterios Dolorosos (Martes y Viernes)</h3>
+            <audio id="rosario-dolorosos-audio" class="w-full" controls>
+                <source src="https://drive.google.com/uc?export=download&id=1EoLKyph67Q_Zxzd-dUk4AZm2D0FnaCEN" type="audio/mpeg">
+                Tu navegador no soporta el audio.
+            </audio>
+        </div>
+
+    </section>
+</div>
+          <div id="misericordia-section" class="hidden space-y-8">
+    <section class="card p-6 md:p-8 space-y-4 fade-in">
+        <h2 class="text-2xl font-bold text-gray-700 mb-4">La Coronilla de la Divina Misericordia</h2>
+        <p class="text-gray-600">Guía de oración en audio.</p>
+        <audio id="misericordia-audio" class="w-full max-w-lg mx-auto" controls>
+            <source src="https://drive.google.com/uc?export=download&id=1p55Qwu8Bbjo-qLfg8JfGwwom_Ne4mY3P" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+    </section>
+</div>
+
+           <div id="oraciones-section" class="hidden space-y-8">
+    
+    <section class="card p-6 md:p-8 space-y-4 fade-in">
+        <h2 class="text-2xl font-bold text-gray-700 mb-4">Oración del Día (Instantánea)</h2>
+        <p class="text-gray-600">Una nueva oración inspiradora generada para hoy.</p>
+        <button id="oracion-btn" class="w-full bg-blue-800 text-white font-bold py-3 px-6 rounded-md shadow-lg hover:bg-blue-900 transition duration-300 flex items-center justify-center space-x-2">
+            <span>Generar Oración</span>
+            <div id="loading-spinner-oracion" class="spinner hidden"></div>
+        </button>
+        <div id="oracion-text" class="text-gray-700 space-y-4 text-sm bg-gray-50 p-4 rounded-lg">
+            <p class="text-gray-500">Tu oración del día aparecerá aquí.</p>
+        </div>
+    </section>
+
+    <section class="card p-6 md:p-8 space-y-6 fade-in">
+        <h2 class="text-2xl font-bold text-gray-700 mb-4">Oraciones Tradicionales en Audio</h2>
+        <p class="text-gray-600">Escucha estas poderosas oraciones cuando lo necesites.</p>
+
+        <div class="space-y-3 p-4 border rounded-lg shadow-sm">
+            <h3 class="text-lg font-semibold text-blue-800">Oración a Santa Brígida</h3>
+            <audio id="brigida-audio" class="w-full" controls>
+                <source src="https://drive.google.com/uc?export=download&id=1Dt_DdqpSHJTueapKIpuTKtM8OzivJyCj" type="audio/mpeg">
+                Tu navegador no soporta el audio.
+            </audio>
+        </div>
+
+        <div class="space-y-3 p-4 border rounded-lg shadow-sm">
+            <h3 class="text-lg font-semibold text-blue-800">El Santo Vía Crucis</h3>
+            <audio id="viacrucis-audio" class="w-full" controls>
+                <source src="https://drive.google.com/uc?export=download&id=1aGPAuY3oLQdZ45_M9u-85G8EE_JggSIo" type="audio/mpeg">
+                Tu navegador no soporta el audio.
+            </audio>
+        </div>
+        
+    </section>
+</div>
 
             <div id="historias-section" class="hidden space-y-8">
                 <section class="card p-6 md:p-8 space-y-4 fade-in">
@@ -239,7 +280,7 @@
                     <h2 class="text-2xl font-bold text-gray-700 mb-4 title-blue">Radio</h2>
                     <p class="text-gray-600 mb-4">Escucha tu emisora de fe favorita en vivo.</p>
                     <audio id="audio-player" class="w-full max-w-lg mx-auto" controls>
-                        <source src="" type="audio/mpeg">
+                        <source src="http://streaming.globalhostla.com:8020/stream" type="audio/mpeg">
                         Tu navegador no soporta el elemento de audio.
                     </audio>
                 </section>
@@ -307,7 +348,6 @@
                     <ul class="list-disc list-inside text-left mx-auto max-w-sm space-y-1 text-gray-700">
                         <li>**Parejas**: Consejos y versículos para la vida en pareja.</li>
                         <li>**Catecismo**: Preguntas y respuestas detalladas.</li>
-                        <li>**Música**: Escucha streaming de música espiritual.</li>
                         <li>**Historias para niños**: Cuentos bíblicos narrados.</li>
                         <li>**Comunidad**: Comparte tus reflexiones y ora con otros.</li>
                     </ul>
@@ -332,7 +372,7 @@
         const db = getFirestore(app);
         
         // IMPORTANTE: DEBES PEGAR TU CLAVE API DE GEMINI AQUÍ
-        const apiKey = "";
+        const apiKey = "AIzaSyADuq2wu7rchSFeiaK5vfhUamoCsgW5fMw";
         let userId = null;
         let userData = {
             isPremium: false,
@@ -506,7 +546,7 @@
         navButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const sectionId = button.getAttribute('data-section');
-                const premiumSections = ['parejas', 'catecismo', 'musica', 'historias', 'comunidad'];
+                const premiumSections = ['parejas', 'catecismo', 'historias', 'comunidad']; // 'musica' ELIMINADA
 
                 if (premiumSections.includes(sectionId) && !userData.isPremium) {
                     showModal("Esta es una función premium. Por favor, obtén la membresía premium para acceder.");
@@ -769,7 +809,3 @@
     </script>
 </body>
 </html>
-
-                    
-        
-                      
