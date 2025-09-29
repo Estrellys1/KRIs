@@ -364,7 +364,8 @@
         import { getFirestore, doc, getDoc, setDoc, updateDoc, collection, query, addDoc, onSnapshot, orderBy, Timestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
         
-        const firebaseConfig = {
+        // ... (alrededor de la línea 220, dentro de <script type="module">)
+        const firebaseConfig =  {
                 apiKey: "AIzaSyBjPcHsXdUUAtvZGYzcRfHL6Wg0c5G9Ojw",
                 authDomain: "kris-d9a63.firebaseapp.com",
                 projectId: "kris-d9a63",
@@ -372,12 +373,14 @@
                 messagingSenderId: "299754246982",
                 appId: "1:299754246982:web:e53e04fffe92d2b33e4b47"
         };
-           
-        // ¡REEMPLAZA Y ELIMINA las líneas antiguas!
-        // Ahora, definimos las variables usando los valores de firebaseConfig
+            
+        // Deja SOLO estas dos líneas, que usan la configuración de arriba:
         const appId = firebaseConfig.appId;
-        const initialAuthToken = null; // Este debe ser 'null'------const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+        const initialAuthToken = null;
+        // La línea siguiente fue eliminada porque estaba declarando la variable de nuevo: 
+        // const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        // La línea siguiente fue eliminada porque estaba declarando la variable de nuevo:
+        // const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
 
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
