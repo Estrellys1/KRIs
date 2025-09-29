@@ -363,8 +363,20 @@
         import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
         import { getFirestore, doc, getDoc, setDoc, updateDoc, collection, query, addDoc, onSnapshot, orderBy, Timestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
+        
+        const firebaseConfig = {
+                apiKey: "AIzaSyBjPcHsXdUUAtvZGYzcRfHL6Wg0c5G9Ojw",
+                authDomain: "kris-d9a63.firebaseapp.com",
+                projectId: "kris-d9a63",
+                storageBucket: "kris-d9a63.firebasestorage.app",
+                messagingSenderId: "299754246982",
+                appId: "1:299754246982:web:e53e04fffe92d2b33e4b47"
+        };
+           
+        // ¡REEMPLAZA Y ELIMINA las líneas antiguas!
+        // Ahora, definimos las variables usando los valores de firebaseConfig
+        const appId = firebaseConfig.appId;
+        const initialAuthToken = null; // Este debe ser 'null'------const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
         const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
 
         const app = initializeApp(firebaseConfig);
